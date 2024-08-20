@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <!-- Head Section -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/output.css" type="text/css" />
+    <link rel="stylesheet" href="src/custom.css" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/b3348ae33f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="node_modules/animejs/lib/anime.min.js"></script>
+  </head>
+
+  <!-- Body Section -->
+  <body class="bg-gray-900 w-screen">
+    <!-- Navigation Section -->
+    <nav class="fixed bg-transparent w-screen z-10">
+      <!-- Hamburger -->
+      <div id="hamburger-icon">
+        <i class="fa-solid fa-bars text-3xl text-white p-3"></i>
+      </div>
+      <ul
+        role="list"
+        id="hamburger-list"
+        class="hamburger-list-class flex-col space-y-4 [&_*]:text-zinc-50 [&_*]:py-3 [&_li]:bg-sky-500/[.06] [&_*]:my-3 [&_*]"
+        dir="ltr"
+      >
+        <a href="#home" class="hover:shadow-lg"><li>Home</li></a>
+        <a href="#about-section" class="hover:shadow-lg"><li>About</li></a>
+        <a href="#skill-section" class="hover:shadow-lg"><li>Skills</li></a>
+        <a href="#exp-section" class="hover:shadow-lg"><li>Experience</li></a>
+        <a href="#achieve-section" class="hover:shadow-lg"
+          ><li>Achievement</li></a
+        >
+        <a href="#portfolio" class="hover:shadow-lg"><li>Portfolio</li></a>
+        <a href="#contact-section" class="hover:shadow-lg"><li>Contact</li></a>
+      </ul>
+    </nav>
+
+    <!-- Main Contents -->
+    <div id="container" class="z-9 divide-y">
+      <!-- Home section -->
+      <div id="home" class="section flex flex-col items-center">
+        <div class="profile-image mb-10 pt-20 text-center">
+          <svg viewbox="0 0 100 100" class="m-auto">
+            <clipPath id="clip1">
+              <polygon
+                id="poly"
+                points="50 0, 100 50, 80 100, 20 100, 0 50"
+                fill="none"
+              ></polygon>
+            </clipPath>
+
+            <g clip-path="url('#clip1')">
+              <image
+                xlink:href="images/self.jpg"
+                width="100%"
+                height="100%"
+                filter="url(#f1)"
+              />
+            </g>
+          </svg>
+        </div>
+
+        <div class="description text-zinc-50 z-8">
+          <p class="letters letters-1">Hi, I am Vaibhav...</p>
+          <p class="letters letters-2">DevOps Engineer by profession...</p>
+          <p class="letters letters-3">Mern Developer</p>
+        </div>
+
+        <div class="dots mb-10 relative">
+          <div class="planets">
+            <div id="sun"></div>
+            <div id="earth"></div>
+          </div>
+          <div class="stars absolute right-48">
+            <i class="fa-solid fa-star text-sm"></i>
+          </div>
+          <div class="stars absolute left-52">
+            <i class="fa-solid fa-star text-sm"></i>
+          </div>
+          <div class="stars absolute left-48 top-20">
+            <i class="fa-solid fa-star text-lg"></i>
+          </div>
+          <div class="stars absolute top-24">
+            <i class="fa-solid fa-star text-base"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Abount Section -->
+      <div id="about-section" class="section text-center">
+        <h1 class="text-zinc-50 mt-20 mb-10">
+          <i class="fa-solid fa-marker"></i> About Me
+        </h1>
+        <p class="text-zinc-50 pr-4 pl-4">
+          Hello, I'm Vaibhav Dhaulakhandi.<br />
+          I am DevOps + MERN Stack Engineer with 5 years of Experience. I enjoy
+          building sites, apps with new features and deploying them in cloud
+          platform and onPrem Solutions.
+        </p>
+      </div>
+      <div id="skill-section" class="section"></div>
+      <div id="exp-section" class="section"></div>
+      <div id="achieve-section" class="section"></div>
+      <div id="portfolio" class="section"></div>
+      <div id="contact-section" class="section"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
