@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <!-- Head Section -->
+  <!-- Head -->
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/output.css" type="text/css" />
-    <link rel="stylesheet" href="src/custom.css" type="text/css" />
+    <link rel="stylesheet" href="src/stylesheets/output.css" type="text/css" />
+    <link rel="stylesheet" href="src/stylesheets/custom.css" type="text/css" />
     <script
       src="https://kit.fontawesome.com/b3348ae33f.js"
       crossorigin="anonymous"
@@ -12,14 +12,15 @@
     <script src="node_modules/animejs/lib/anime.min.js"></script>
   </head>
 
-  <!-- Body Section -->
+  <!-- Body -->
   <body class="bg-gray-900 w-screen">
     <!-- Navigation Section -->
     <nav class="fixed bg-transparent w-screen z-10">
-      <!-- Hamburger -->
+      <!-- Hamburger Icon-->
       <div id="hamburger-icon">
         <i class="fa-solid fa-bars text-3xl text-white p-3"></i>
       </div>
+      <!-- Hamburger List -->
       <ul
         role="list"
         id="hamburger-list"
@@ -37,13 +38,21 @@
         <a href="#contact-section" class="hover:shadow-lg"><li>Contact</li></a>
       </ul>
     </nav>
+    <!-- End of Nav Bar -->
 
-    <!-- Main Contents -->
-    <div id="container" class="z-9 divide-y">
+    <!-- Sections Container -->
+    <div id="container" class="z-9 divide-y mx-3.5">
       <!-- Home section -->
-      <div id="home" class="section flex flex-col items-center">
-        <div class="profile-image mb-10 pt-20 text-center">
+      <section
+        id="home"
+        class="section flex flex-col items-center h-screen overflow-hidden"
+      >
+        <!-- Profile Image -->
+        <div
+          class="profile-image w-52 mb-10 pt-20 lg:w-72 lg:mb-24 text-center"
+        >
           <svg viewbox="0 0 100 100" class="m-auto">
+            <!-- Clip Path Config -->
             <clipPath id="clip1">
               <polygon
                 id="poly"
@@ -51,55 +60,122 @@
                 fill="none"
               ></polygon>
             </clipPath>
-
+            <!-- Clip image -->
             <g clip-path="url('#clip1')">
               <image
-                xlink:href="images/self.jpg"
+                xlink:href="assets/images/self.jpg"
                 width="100%"
                 height="100%"
-                filter="url(#f1)"
               />
             </g>
           </svg>
         </div>
 
-        <div class="description text-zinc-50 z-8">
-          <p class="letters letters-1">Hi, I am Vaibhav...</p>
-          <p class="letters letters-2">DevOps Engineer by profession...</p>
-          <p class="letters letters-3">Mern Developer</p>
+        <div
+          class="description text-zinc-50 z-8 tracking-wide uppercase text-3xl lg:font-semibold lg:text-5xl"
+        >
+          <p class="letters letters-1 absolute left-11">Hi, I am Vaibhav...</p>
+          <p class="letters letters-2 absolute left-4">DevOps Engineer</p>
+          <p class="letters letters-3 absolute left-4">Mern Developer</p>
         </div>
 
-        <div class="dots mb-10 relative">
-          <div class="planets">
-            <div id="sun"></div>
-            <div id="earth"></div>
+        <div class="dots mt-28 text-xl lg:mt-0">
+          <div
+            class="planets flex flex-col items-center justify-center lg:absolute lg:right-80 lg:top-96"
+          >
+            <!-- Sun -->
+            <div id="sun">
+              <svg
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 420 420"
+                xml:space="preserve"
+                class="h-36"
+              >
+                <g>
+                  <polygon
+                    style="fill: #f5c525"
+                    points="420,210 375.774,247.857 399.238,301.145 342.926,315.986 340.945,374.184 283.764,363.211 
+		256.724,414.779 210,380 163.276,414.779 136.236,363.211 79.055,374.184 77.073,315.986 20.762,301.144 44.226,247.858 0,210 
+		44.226,172.143 20.762,118.855 77.074,104.014 79.055,45.816 136.236,56.789 163.276,5.221 210,40 256.723,5.221 283.764,56.789 
+		340.945,45.816 342.927,104.014 399.238,118.856 375.774,172.142 	"
+                  />
+                  <circle style="fill: #f8a805" cx="210" cy="210" r="140" />
+                </g>
+              </svg>
+            </div>
+
+            <!-- Earth -->
+            <div
+              id="earth"
+              class="absolute left-44 rounded-full h-6 w-6 lg:h-11 lg:w-11 lg:left-56"
+            >
+              <img
+                src="assets/images/earth.png"
+                class="h-6 w-6 lg:h-11 lg:w-11"
+              />
+            </div>
           </div>
-          <div class="stars absolute right-48">
+          <div class="stars absolute right-5 lg:right-20 lg:bottom-20">
             <i class="fa-solid fa-star text-sm"></i>
           </div>
-          <div class="stars absolute left-52">
+          <div class="stars absolute right-14 bottom-64">
             <i class="fa-solid fa-star text-sm"></i>
           </div>
+          <!-- 
           <div class="stars absolute left-48 top-20">
             <i class="fa-solid fa-star text-lg"></i>
           </div>
           <div class="stars absolute top-24">
             <i class="fa-solid fa-star text-base"></i>
           </div>
+          <div class="stars absolute right-48">
+            <i class="fa-solid fa-star text-sm"></i>
+          </div>
+          <div class="stars absolute left-80">
+            <i class="fa-solid fa-star text-sm"></i>
+          </div>
+          <div class="stars absolute left-52 top-36">
+            <i class="fa-solid fa-star text-lg"></i>
+          </div>
+          <div class="stars absolute top-80 right-44">
+            <i class="fa-solid fa-star text-base"></i>
+          </div> -->
         </div>
-      </div>
+      </section>
       <!-- Abount Section -->
-      <div id="about-section" class="section text-center">
-        <h1 class="text-zinc-50 mt-20 mb-10">
+      <div id="about-section" class="section text-center shadow relative">
+        <div class="balls">
+          <div
+            id="ball-1"
+            class="absolute rounded-full h-24 w-24 bg-red-500"
+          ></div>
+          <div
+            id="ball-2"
+            class="absolute rounded-full h-8 w-8 bg-orange-500"
+          ></div>
+          <div
+            id="ball-3"
+            class="absolute rounded-full h-48 w-48 bg-green-500"
+          ></div>
+          <div
+            id="ball-4"
+            class="absolute rounded-full h-12 w-12 bg-violet-500"
+          ></div>
+        </div>
+        <h1 class="text-zinc-50 mt-20 mb-10 mt-64 anim-on-scroll">
           <i class="fa-solid fa-marker"></i> About Me
         </h1>
-        <p class="text-zinc-50 pr-4 pl-4">
+        <p class="text-zinc-50 pr-4 pl-4 anim-on-scroll">
           Hello, I'm Vaibhav Dhaulakhandi.<br />
           I am DevOps + MERN Stack Engineer with 5 years of Experience. I enjoy
           building sites, apps with new features and deploying them in cloud
           platform and onPrem Solutions.
         </p>
       </div>
+
       <div id="skill-section" class="section"></div>
       <div id="exp-section" class="section"></div>
       <div id="achieve-section" class="section"></div>
@@ -107,6 +183,6 @@
       <div id="contact-section" class="section"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="src/js/script.js"></script>
   </body>
 </html>

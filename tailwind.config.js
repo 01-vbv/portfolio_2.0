@@ -1,7 +1,7 @@
 import plugin from "tailwindcss/plugin";
 
 module.exports = {
-  content: ["./*.{html,js}"],
+  content: ["./src/**/*.{html,js}", "./index.html"],
   theme: {
     extend: {},
   },
