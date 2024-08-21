@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/b3348ae33f.js"
       crossorigin="anonymous"
     ></script>
+    <script src="src/js/anime.js"></script>
     <script src="node_modules/animejs/lib/anime.min.js"></script>
   </head>
 
@@ -41,7 +42,7 @@
     <!-- End of Nav Bar -->
 
     <!-- Sections Container -->
-    <div id="container" class="z-9 divide-y mx-3.5">
+    <div id="container" class="z-9">
       <!-- Home section -->
       <section
         id="home"
@@ -71,8 +72,9 @@
           </svg>
         </div>
 
+        <!-- Description -->
         <div
-          class="description text-zinc-50 z-8 tracking-wide uppercase text-3xl lg:font-semibold lg:text-5xl"
+          class="description text-zinc-50 z-8 tracking-wide uppercase text-3xl lg:font-semibold lg:text-5xl px-3.5"
         >
           <p class="letters letters-1 absolute left-11">Hi, I am Vaibhav...</p>
           <p class="letters letters-2 absolute left-4">DevOps Engineer</p>
@@ -118,6 +120,8 @@
               />
             </div>
           </div>
+
+          <!-- Stars -->
           <div class="stars absolute right-5 lg:right-20 lg:bottom-20">
             <i class="fa-solid fa-star text-lg"></i>
           </div>
@@ -151,38 +155,47 @@
           </div>
         </div>
       </section>
+
       <!-- Abount Section -->
-      <div id="about-section" class="section text-center shadow relative">
+      <div
+        id="about-section"
+        class="section flex flex-col items-center h-screen overflow-hidden"
+      >
         <div class="balls">
           <div
             id="ball-1"
-            class="absolute rounded-full h-24 w-24 bg-red-500"
+            class="absolute rounded-full h-24 w-24 bg-green-500 -z-10"
           ></div>
           <div
             id="ball-2"
-            class="absolute rounded-full h-8 w-8 bg-orange-500"
+            class="absolute rounded-full h-8 w-8 bg-orange-500 -z-10"
           ></div>
           <div
             id="ball-3"
-            class="absolute rounded-full h-48 w-48 bg-green-500"
+            class="absolute rounded-full h-36 w-36 bg-red-500 -z-10"
           ></div>
           <div
             id="ball-4"
-            class="absolute rounded-full h-12 w-12 bg-violet-500"
+            class="absolute rounded-full h-12 w-12 bg-violet-500 -z-10"
           ></div>
         </div>
-        <h1 class="text-zinc-50 mt-20 mb-10 mt-64 anim-on-scroll">
+        <h1 class="text-zinc-50 text-4xl py-14 lg:py-5">
           <i class="fa-solid fa-marker"></i> About Me
         </h1>
-        <p class="text-zinc-50 pr-4 pl-4 anim-on-scroll">
+        <p
+          class="text-zinc-50 text-xl px-3.5 tracking-widest break-normal font-normal text-wrap text-center leading-loose lg:px-28"
+        >
           Hello, I'm Vaibhav Dhaulakhandi.<br />
-          I am DevOps + MERN Stack Engineer with 5 years of Experience. I enjoy
-          building sites, apps with new features and deploying them in cloud
-          platform and onPrem Solutions.
+          I am DevOps + MERN Stack Engineer with years of hands on Experience. I
+          enjoy building sites, apps with new features and deploying them in
+          cloud platform and onPrem Solutions.
         </p>
       </div>
 
-      <div id="skill-section" class="section"></div>
+      <div
+        id="skill-section"
+        class="section flex flex-col items-center h-screen overflow-hidden"
+      ></div>
       <div id="exp-section" class="section"></div>
       <div id="achieve-section" class="section"></div>
       <div id="portfolio" class="section"></div>

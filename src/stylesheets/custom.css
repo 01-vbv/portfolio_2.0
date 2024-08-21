@@ -42,9 +42,10 @@
 
 
 html {
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none;  
   scrollbar-width: none; 
-  overflow-y: scroll
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 /* Hamburger CSS */
@@ -62,10 +63,7 @@ html {
 }
 
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* Home Section */
 
 svg{
     filter:  drop-shadow( 4px -4px 8px  rgb(45, 87, 193))  drop-shadow( -2px 2px 8px  rgb(45, 87, 193))  
@@ -94,4 +92,15 @@ svg #poly{
     height: 20px;
     width: 20px;
     color: white;
+}
+
+
+/* About Section */
+#about-section h1 {
+    font-family: 'Montserrat-Regular';
+}
+
+#about-section p {
+    font-family: 'Lato-Light';
+    word-spacing: 8px;
 }

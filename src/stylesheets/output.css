@@ -596,10 +596,6 @@ video {
   position: absolute;
 }
 
-.relative {
-  position: relative;
-}
-
 .bottom-40 {
   bottom: 10rem;
 }
@@ -660,6 +656,10 @@ video {
   top: 15rem;
 }
 
+.-z-10 {
+  z-index: -10;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -668,25 +668,12 @@ video {
   margin: auto;
 }
 
-.mx-3\.5 {
-  margin-left: 0.875rem;
-  margin-right: 0.875rem;
-}
-
 .mb-10 {
   margin-bottom: 2.5rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .mt-28 {
   margin-top: 7rem;
-}
-
-.mt-64 {
-  margin-top: 16rem;
 }
 
 .flex {
@@ -703,10 +690,6 @@ video {
 
 .h-36 {
   height: 9rem;
-}
-
-.h-48 {
-  height: 12rem;
 }
 
 .h-6 {
@@ -729,8 +712,8 @@ video {
   width: 6rem;
 }
 
-.w-48 {
-  width: 12rem;
+.w-36 {
+  width: 9rem;
 }
 
 .w-52 {
@@ -767,14 +750,17 @@ video {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
-.divide-y > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-y-reverse: 0;
-  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-}
-
 .overflow-hidden {
   overflow: hidden;
+}
+
+.text-wrap {
+  text-wrap: wrap;
+}
+
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .rounded-full {
@@ -814,12 +800,14 @@ video {
   padding: 0.75rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
+.px-3\.5 {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
 }
 
-.pr-4 {
-  padding-right: 1rem;
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .pt-20 {
@@ -833,6 +821,11 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-base {
@@ -855,12 +848,24 @@ video {
   line-height: 1.75rem;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
 
+.leading-loose {
+  line-height: 2;
+}
+
 .tracking-wide {
   letter-spacing: 0.025em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
 
 .text-white {
@@ -871,12 +876,6 @@ video {
 .text-zinc-50 {
   --tw-text-opacity: 1;
   color: rgb(250 250 250 / var(--tw-text-opacity));
-}
-
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .blur-lg {
@@ -969,6 +968,16 @@ video {
 
   .lg\:w-72 {
     width: 18rem;
+  }
+
+  .lg\:px-28 {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+
+  .lg\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   .lg\:text-5xl {

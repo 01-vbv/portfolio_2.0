@@ -1,101 +1,11 @@
 const container = document.getElementById("container");
 const hamburger_icon_div = document.getElementById("hamburger-icon");
-const hamburger_icon = document.querySelector("#hamburger-icon i");
-const hamburger_list = document.getElementById("hamburger-list");
 const hamburger_list_items = document.querySelectorAll("#hamburger-list a li");
 const section_div = document.querySelectorAll(".section");
-const clipImage = document.querySelector(".profile-image");
-const about_section = document.getElementById("about-section");
+
 let flag = true;
 
-const animateOnScroll = function (animation, element, speed = 100, offset = 0) {
-  let scrollPercentage = window.scrollY - element.offsetTop;
-  animation.seek(((scrollPercentage + offset) / speed) * animation.duration);
-};
-
-hamburger_icon_div.addEventListener("click", () => {
-  container.classList.add("blur-lg");
-  if (flag) {
-    anime({
-      targets: hamburger_list,
-      height: {
-        value: (el) => el.scrollHeight,
-        duration: 400,
-        easing: "easeInOutSine",
-      },
-      translateX: 0,
-      duration: 1000,
-    });
-    anime({
-      targets: hamburger_icon,
-      rotate: "90",
-    });
-  } else {
-    container.classList.remove("blur-lg");
-    anime({
-      targets: hamburger_list,
-      height: {
-        value: "0", // 28 - 20 = '8px'
-        duration: 400,
-        easing: "easeInOutSine",
-      },
-      translateX: "120%",
-      duration: 1000,
-    });
-    anime({
-      targets: hamburger_icon,
-      rotate: "0",
-    });
-  }
-  flag = !flag;
-});
-
-hamburger_list_items[0].style.backgroundColor = "red";
-let vh = Math.floor(window.innerHeight);
-
-//On scroll event
-window.onscroll = function (e) {
-  if (section_div[0].getBoundingClientRect().top >= -10) {
-    navBarOptionSelection(0);
-  } else if (section_div[1].getBoundingClientRect().top >= -10) {
-    navBarOptionSelection(1);
-  } else if (section_div[2].getBoundingClientRect().top >= -10) {
-    navBarOptionSelection(2);
-  } else if (section_div[3].getBoundingClientRect().top >= -10) {
-    navBarOptionSelection(3);
-  } else if (section_div[4].getBoundingClientRect().top >= -10) {
-    navBarOptionSelection(4);
-  } else if (section_div[5].getBoundingClientRect().top >= -10) {
-    navBarOptionSelection(5);
-  } else if (section_div[6].getBoundingClientRect().top >= -10) {
-    navBarOptionSelection(6);
-  }
-
-  animateOnScroll(aboutSectionAnimation, about_section, 200, 400);
-  animateOnScroll(ballsAnimation, about_section, 200, 400);
-
-  console.log(
-    window.scrollY -
-      document.querySelector(".balls").getBoundingClientRect().top
-  );
-
-  if (
-    window.scrollY -
-      document.querySelector(".balls").getBoundingClientRect().top ==
-    window.scrollY
-  ) {
-    anime({
-      targets: ".balls",
-      translateY: -10,
-      delay: function (el, i) {
-        return i * 100;
-      },
-      direction: "alternate",
-      loop: true,
-      easing: "easeInOutSine",
-    });
-  }
-};
+// ########################################## Custom JS #############################################
 
 const navBarOptionSelection = function (index) {
   for (let i = 0; i < hamburger_list_items.length; i++) {
@@ -107,8 +17,19 @@ const navBarOptionSelection = function (index) {
   }
 };
 
+// ##############################################  ANIMATION #########################################
+
+// Animation function
+const animateOnScroll = function (animation, element, speed = 100, offset = 0) {
+  let scrollPercentage = window.scrollY - element.offsetTop;
+  animation.seek(((scrollPercentage + offset) / speed) * animation.duration);
+};
+
+// Hamburger animation handler
+
+// Initial animation
 anime({
-  targets: hamburger_list,
+  targets: ".hamburger-list-class",
   height: {
     value: "0",
     duration: 1000,
@@ -117,6 +38,78 @@ anime({
   translateX: "120%",
 });
 
+hamburger_icon_div.addEventListener("click", () => {
+  container.classList.add("blur-lg");
+  if (flag) {
+    anime({
+      targets: ".hamburger-list-class",
+      height: {
+        value: (el) => el.scrollHeight,
+        easing: "easeInOutSine",
+      },
+      translateX: 0,
+      duration: 1200,
+    });
+    anime({
+      targets: "#hamburger-icon i",
+      rotate: "90",
+    });
+  } else {
+    container.classList.remove("blur-lg");
+    anime({
+      targets: ".hamburger-list-class",
+      height: {
+        value: "0",
+        duration: 400,
+        easing: "easeInOutSine",
+      },
+      translateX: "120%",
+      duration: 1000,
+    });
+    anime({
+      targets: "#hamburger-icon i",
+      rotate: "0",
+    });
+  }
+  flag = !flag;
+});
+
+//solar animation
+
+// Planets
+anime({
+  targets: ".planets",
+  rotate: 360,
+  duration: 12000,
+  easing: "linear",
+  loop: true,
+});
+
+// Stars
+anime({
+  targets: ".stars i",
+  textShadow: [
+    {
+      value: ["1px 1px 8px rgb(255,255,255) ,-1px -1px 8px rgb(255,255,255)"],
+      delay: 0,
+      endDelay: 0,
+    },
+  ],
+  easing: "linear",
+  direction: "alternate",
+  loop: true,
+});
+
+// Earth
+anime({
+  targets: "#earth",
+  rotate: 360,
+  easing: "linear",
+  duration: 16000,
+  loop: true,
+});
+
+// Description Animation
 let textWrapper1 = document.querySelector(".description .letters-1");
 textWrapper1.innerHTML = textWrapper1.textContent.replace(
   /\S/g,
@@ -189,45 +182,129 @@ anime
     delay: (el, i) => 100 + 30 * i,
   });
 
-//  solar animation
-anime({
-  targets: ".planets",
-  rotate: 360,
-  duration: 12000,
-  easing: "linear",
-  loop: true,
-});
+// ## About Section Animation ##
 
-anime({
-  targets: ".stars i",
-  // rotate: 360,
-  // duration: 12000,
-  textShadow: [
-    {
-      value: ["1px 1px 8px rgb(255,255,255) ,-1px -1px 8px rgb(255,255,255)"],
-      delay: 0,
-      endDelay: 0,
-    },
-  ],
-  easing: "linear",
-  direction: "alternate",
-  loop: true,
-});
-
-// about section
-//About section
-const aboutSectionAnimation = anime({
-  targets: [".anim-on-scroll"],
-  translateY: -156,
+const aboutAnimation = anime({
+  targets: "#about-section p, #about-section h1",
+  translateY: [250, 10],
   opacity: [0, 1],
-  easing: "linear",
+  elasticity: 200,
+  easing: "easeInOutSine",
   autoplay: false,
 });
 
-const ballsAnimation = anime({
-  targets: [".balls"],
-  opacity: [0, 0.8],
-  easing: "linear",
+//balls animation
+// const ball1Animation = anime({
+//   targets: "#ball-3",
+//   translateX: [0, 100],
+//   translateY: [0, 250],
+//   opacity: [0, 1],
+//   easing: "easeInOutSine",
+//   autoplay: false,
+// });
+
+// const ball2Animation = anime({
+//   targets: "#ball-3",
+//   translateX: [0, 100],
+//   translateY: [0, 250],
+//   opacity: [0, 1],
+//   easing: "easeInOutSine",
+//   autoplay: false,
+// });
+let ball1Animation;
+let ball2Animation;
+let ball3Animation;
+let ball4Animation;
+
+ball1Animation = anime({
+  targets: "#ball-1",
+  translateX: [-50, 60],
+  translateY: [0, 75],
+  opacity: [0, 1],
+  easing: "easeInOutSine",
   autoplay: false,
-  direction: "alternate",
 });
+ball2Animation = anime({
+  targets: "#ball-2",
+  translateX: [-50, -160],
+  translateY: [0, 75],
+  opacity: [0, 1],
+  easing: "easeInOutSine",
+  autoplay: false,
+});
+ball3Animation = anime({
+  targets: "#ball-3",
+  translateX: [-50, -150],
+  translateY: [0, 480],
+  opacity: [0, 1],
+  easing: "easeInOutSine",
+  autoplay: false,
+});
+ball4Animation = anime({
+  targets: "#ball-4",
+  translateX: [-50, 120],
+  translateY: [0, 450],
+  opacity: [0, 1],
+  easing: "easeInOutSine",
+  autoplay: false,
+});
+
+// ##############################################   EVENTS  ##########################################
+
+//On scroll event
+hamburger_list_items[0].style.backgroundColor = "red";
+let vh = Math.floor(window.innerHeight);
+
+window.onscroll = function (e) {
+  if (section_div[0].getBoundingClientRect().top >= -10) {
+    navBarOptionSelection(0);
+  } else if (section_div[1].getBoundingClientRect().top >= -10) {
+    navBarOptionSelection(1);
+  } else if (section_div[2].getBoundingClientRect().top >= -10) {
+    navBarOptionSelection(2);
+  } else if (section_div[3].getBoundingClientRect().top >= -10) {
+    navBarOptionSelection(3);
+  } else if (section_div[4].getBoundingClientRect().top >= -10) {
+    navBarOptionSelection(4);
+  } else if (section_div[5].getBoundingClientRect().top >= -10) {
+    navBarOptionSelection(5);
+  } else if (section_div[6].getBoundingClientRect().top >= -10) {
+    navBarOptionSelection(6);
+  }
+
+  //animation on scroll
+  animateOnScroll(
+    aboutAnimation,
+    document.getElementById("about-section"),
+    500,
+    600
+  );
+
+  //balls animation
+  if (!window.matchMedia("(min-width: 1024px)").matches) {
+    animateOnScroll(
+      ball1Animation,
+      document.getElementById("ball-1"),
+      600,
+      600
+    );
+    animateOnScroll(
+      ball2Animation,
+      document.getElementById("ball-2"),
+      600,
+      600
+    );
+    animateOnScroll(
+      ball3Animation,
+      document.getElementById("ball-3"),
+      600,
+      600
+    );
+    animateOnScroll(
+      ball4Animation,
+      document.getElementById("ball-4"),
+      600,
+      600
+    );
+  }
+};
