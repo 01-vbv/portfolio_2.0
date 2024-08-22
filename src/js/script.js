@@ -193,24 +193,6 @@ const aboutAnimation = anime({
   autoplay: false,
 });
 
-//balls animation
-// const ball1Animation = anime({
-//   targets: "#ball-3",
-//   translateX: [0, 100],
-//   translateY: [0, 250],
-//   opacity: [0, 1],
-//   easing: "easeInOutSine",
-//   autoplay: false,
-// });
-
-// const ball2Animation = anime({
-//   targets: "#ball-3",
-//   translateX: [0, 100],
-//   translateY: [0, 250],
-//   opacity: [0, 1],
-//   easing: "easeInOutSine",
-//   autoplay: false,
-// });
 let ball1Animation;
 let ball2Animation;
 let ball3Animation;
@@ -246,6 +228,18 @@ ball4Animation = anime({
   translateY: [0, 450],
   opacity: [0, 1],
   easing: "easeInOutSine",
+  autoplay: false,
+});
+
+// ## Skill Section
+
+// Moonlight
+var moonlightAnimation = anime({
+  targets: "#moonlight",
+  duration: 3000,
+  width: "100%",
+  height: "100%",
+  easing: "easeOutQuad",
   autoplay: false,
 });
 
@@ -307,4 +301,11 @@ window.onscroll = function (e) {
       600
     );
   }
+  // moonlight animation
+  animateOnScroll(
+    moonlightAnimation,
+    document.getElementById("moonlight"),
+    600,
+    600
+  );
 };

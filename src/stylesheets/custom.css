@@ -104,3 +104,18 @@ svg #poly{
     font-family: 'Lato-Light';
     word-spacing: 8px;
 }
+
+
+/* Skill Section */
+#moonlight {
+    /* background: radial-gradient(circle at 0px 50%, rgb(158, 151, 151) 10%, rgba(56, 52, 52, 0.016) 50%, rgb(17,24,39)) ; */
+    opacity: 0.5;
+    width: 0px;
+    height: 0px;
+    background: radial-gradient(ellipse at 0px 50%, rgb(158, 151, 151) 10%, rgba(56, 52, 52, 0.016) 50%, rgb(17,24,39)) ;
+    /* border-radius: 60%; */
+    /* border: 2px solid red */
+    /* box-shadow: -4px -5px 5px rgb(158, 151, 151) ; */
+    /* background-blend-mode: overlay; */
+    /* border-radius: 50%; */
+}
