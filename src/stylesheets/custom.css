@@ -47,7 +47,6 @@ html {
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-
 /* Hamburger CSS */
 
 .hamburger-list-class{
@@ -96,7 +95,7 @@ svg #poly{
 
 
 /* About Section */
-#about-section h1 {
+h1 {
     font-family: 'Montserrat-Regular';
 }
 
@@ -107,15 +106,34 @@ svg #poly{
 
 
 /* Skill Section */
-#moonlight {
-    /* background: radial-gradient(circle at 0px 50%, rgb(158, 151, 151) 10%, rgba(56, 52, 52, 0.016) 50%, rgb(17,24,39)) ; */
+
+#moon {
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));
     opacity: 0.5;
-    width: 0px;
-    height: 0px;
-    background: radial-gradient(ellipse at 0px 50%, rgb(158, 151, 151) 10%, rgba(56, 52, 52, 0.016) 50%, rgb(17,24,39)) ;
-    /* border-radius: 60%; */
-    /* border: 2px solid red */
-    /* box-shadow: -4px -5px 5px rgb(158, 151, 151) ; */
-    /* background-blend-mode: overlay; */
-    /* border-radius: 50%; */
 }
+
+
+#skills > div {
+    filter: drop-shadow(0 0 0.2rem black);
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

@@ -21,8 +21,10 @@ const navBarOptionSelection = function (index) {
 
 // Animation function
 const animateOnScroll = function (animation, element, speed = 100, offset = 0) {
-  let scrollPercentage = window.scrollY - element.offsetTop;
-  animation.seek(((scrollPercentage + offset) / speed) * animation.duration);
+  if (element != null) {
+    let scrollPercentage = window.scrollY - element.offsetTop;
+    animation.seek(((scrollPercentage + offset) / speed) * animation.duration);
+  }
 };
 
 // Hamburger animation handler
@@ -198,34 +200,55 @@ let ball2Animation;
 let ball3Animation;
 let ball4Animation;
 
+let ball1_pos;
+let ball2_pos;
+let ball3_pos;
+let ball4_pos;
+
 ball1Animation = anime({
   targets: "#ball-1",
-  translateX: [-50, 60],
-  translateY: [0, 75],
+  translateX: window.matchMedia("(min-width: 1024px)").matches
+    ? [-50, 200]
+    : [-50, 60],
+  translateY: window.matchMedia("(min-width: 1024px)").matches
+    ? [-50, 20]
+    : [0, 75],
   opacity: [0, 1],
   easing: "easeInOutSine",
   autoplay: false,
 });
 ball2Animation = anime({
   targets: "#ball-2",
-  translateX: [-50, -160],
-  translateY: [0, 75],
+  translateX: window.matchMedia("(min-width: 1024px)").matches
+    ? [-50, -200]
+    : [-50, -160],
+  translateY: window.matchMedia("(min-width: 1024px)").matches
+    ? [-50, 50]
+    : [0, 75],
   opacity: [0, 1],
   easing: "easeInOutSine",
   autoplay: false,
 });
 ball3Animation = anime({
   targets: "#ball-3",
-  translateX: [-50, -150],
-  translateY: [0, 480],
+  translateX: window.matchMedia("(min-width: 1024px)").matches
+    ? [-50, -250]
+    : [-50, -150],
+  translateY: window.matchMedia("(min-width: 1024px)").matches
+    ? [-50, 350]
+    : [0, 480],
   opacity: [0, 1],
   easing: "easeInOutSine",
   autoplay: false,
 });
 ball4Animation = anime({
   targets: "#ball-4",
-  translateX: [-50, 120],
-  translateY: [0, 450],
+  translateX: window.matchMedia("(min-width: 1024px)").matches
+    ? [-50, 300]
+    : [-50, 120],
+  translateY: window.matchMedia("(min-width: 1024px)").matches
+    ? [-50, 300]
+    : [0, 450],
   opacity: [0, 1],
   easing: "easeInOutSine",
   autoplay: false,
@@ -233,15 +256,40 @@ ball4Animation = anime({
 
 // ## Skill Section
 
-// Moonlight
-var moonlightAnimation = anime({
-  targets: "#moonlight",
-  duration: 3000,
-  width: "100%",
-  height: "100%",
-  easing: "easeOutQuad",
+const skillAnimation = anime({
+  targets: "#skills, #skill-section h1",
+  translateY: [250, 10],
+  opacity: [0, 1],
+  elasticity: 200,
+  easing: "easeInOutSine",
   autoplay: false,
 });
+// Moonlight
+let moonlightAnimation = anime.timeline({
+  easing: "easeInOutQuad",
+  autoplay: false,
+});
+
+moonlightAnimation
+  .add({
+    translateX: ["0%", "-60%"],
+    translateY: ["0%", "80%"],
+    opacity: [0, 0.4],
+    targets: "#moonlight",
+  })
+  .add({
+    translateX: ["-60%", "60%"],
+    translateY: ["80%", "100%"],
+    opacity: [0.4, 0.7],
+    targets: "#moonlight",
+  })
+  .add({
+    translateX: ["60%", "-60%"],
+    translateY: ["100%", "120%"],
+    scale: [1, 1.5],
+    opacity: [0.7, 1],
+    targets: "#moonlight",
+  });
 
 // ##############################################   EVENTS  ##########################################
 
@@ -274,38 +322,25 @@ window.onscroll = function (e) {
     600
   );
 
+  animateOnScroll(
+    skillAnimation,
+    document.getElementById("skill-section"),
+    800,
+    800
+  );
+
   //balls animation
-  if (!window.matchMedia("(min-width: 1024px)").matches) {
-    animateOnScroll(
-      ball1Animation,
-      document.getElementById("ball-1"),
-      600,
-      600
-    );
-    animateOnScroll(
-      ball2Animation,
-      document.getElementById("ball-2"),
-      600,
-      600
-    );
-    animateOnScroll(
-      ball3Animation,
-      document.getElementById("ball-3"),
-      600,
-      600
-    );
-    animateOnScroll(
-      ball4Animation,
-      document.getElementById("ball-4"),
-      600,
-      600
-    );
-  }
+
+  animateOnScroll(ball1Animation, document.getElementById("ball-1"), 600, 600);
+  animateOnScroll(ball2Animation, document.getElementById("ball-2"), 600, 600);
+  animateOnScroll(ball3Animation, document.getElementById("ball-3"), 600, 600);
+  animateOnScroll(ball4Animation, document.getElementById("ball-4"), 600, 600);
+
   // moonlight animation
   animateOnScroll(
     moonlightAnimation,
     document.getElementById("moonlight"),
-    600,
-    600
+    400,
+    400
   );
 };
