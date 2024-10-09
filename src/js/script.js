@@ -265,29 +265,12 @@ const skillAnimation = anime({
   autoplay: false,
 });
 // Moonlight
-let moonlightAnimation = anime.timeline({
+let moonlightAnimation = anime({
   easing: "easeInOutQuad",
   autoplay: false,
+  translateY: [0, 120],
+  rotate: ["0deg", "360deg"],
 });
-
-moonlightAnimation
-  .add({
-    translateY: ["0%", "80%"],
-    targets: "#moonlight",
-  })
-  .add({
-    translateY: ["80%", "100%"],
-    targets: "#moonlight",
-  })
-  .add({
-    translateY: ["100%", "120%"],
-    scale: [1, 1.3],
-    targets: "#moonlight",
-  })
-  .add({
-    rotate: "1turn",
-    targets: "#moonlight",
-  });
 
 // ##############################################   EVENTS  ##########################################
 
@@ -338,7 +321,7 @@ window.onscroll = function (e) {
   animateOnScroll(
     moonlightAnimation,
     document.getElementById("moonlight"),
-    1000,
-    1000
+    600,
+    600
   );
 };
