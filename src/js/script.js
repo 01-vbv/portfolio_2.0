@@ -272,19 +272,20 @@ let moonlightAnimation = anime.timeline({
 
 moonlightAnimation
   .add({
-    translateX: ["0%", "-60%"],
     translateY: ["0%", "80%"],
     targets: "#moonlight",
   })
   .add({
-    translateX: ["-60%", "60%"],
     translateY: ["80%", "100%"],
     targets: "#moonlight",
   })
   .add({
-    translateX: ["60%", "-60%"],
     translateY: ["100%", "120%"],
-    scale: [1, 1.5],
+    scale: [1, 1.3],
+    targets: "#moonlight",
+  })
+  .add({
+    rotate: "1turn",
     targets: "#moonlight",
   });
 
@@ -337,7 +338,7 @@ window.onscroll = function (e) {
   animateOnScroll(
     moonlightAnimation,
     document.getElementById("moonlight"),
-    800,
-    800
+    600,
+    600
   );
 };
