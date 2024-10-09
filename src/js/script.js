@@ -337,7 +337,7 @@ window.onscroll = function (e) {
   animateOnScroll(
     moonlightAnimation,
     document.getElementById("moonlight"),
-    600,
-    600
+    800,
+    800
   );
 };
