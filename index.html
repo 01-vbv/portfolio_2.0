@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/stylesheets/output.css" type="text/css" />
     <link rel="stylesheet" href="src/stylesheets/custom.css" type="text/css" />
+
+    <!-- Swiper CSS Stylesheet -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script
       src="https://kit.fontawesome.com/b3348ae33f.js"
       crossorigin="anonymous"
@@ -20,7 +25,7 @@
   <!-- Body -->
   <body class="bg-gray-900 w-screen">
     <!--############### Navigation Section ####################-->
-    <nav class="fixed bg-transparent w-screen z-10">
+    <nav class="fixed w-screen z-40">
       <!-- Hamburger Icon-->
       <div id="hamburger-icon">
         <i class="fa-solid fa-bars text-3xl text-white p-3"></i>
@@ -32,21 +37,19 @@
         class="hamburger-list-class flex-col space-y-4 [&_*]:text-zinc-50 [&_*]:py-3 [&_li]:bg-sky-500/[.06] [&_*]:my-3 [&_*]"
         dir="ltr"
       >
-        <a href="#home" class="hover:shadow-lg"><li>Home</li></a>
-        <a href="#about-section" class="hover:shadow-lg"><li>About</li></a>
-        <a href="#skill-section" class="hover:shadow-lg"><li>Skills</li></a>
-        <a href="#exp-section" class="hover:shadow-lg"><li>Experience</li></a>
-        <a href="#achieve-section" class="hover:shadow-lg"
-          ><li>Achievement</li></a
-        >
-        <a href="#portfolio" class="hover:shadow-lg"><li>Portfolio</li></a>
-        <a href="#contact-section" class="hover:shadow-lg"><li>Contact</li></a>
+        <a href="#home"><li>Home</li></a>
+        <a href="#about-section"><li>About</li></a>
+        <a href="#skill-section"><li>Skills</li></a>
+        <a href="#exp-section"><li>Experience</li></a>
+        <a href="#achieve-section"><li>Achievement</li></a>
+        <a href="#portfolio"><li>Portfolio</li></a>
+        <a href="#contact-section"><li>Contact</li></a>
       </ul>
     </nav>
     <!-- End of Nav Bar -->
 
     <!-- Sections Container -->
-    <div id="container" class="z-9">
+    <div id="container" class="z-20">
       <!--################ Home section #################-->
       <section
         id="home"
@@ -78,7 +81,7 @@
 
         <!-- Description -->
         <div
-          class="description text-zinc-50 z-8 tracking-wide uppercase text-3xl lg:font-semibold lg:text-5xl px-3.5"
+          class="description text-zinc-50 tracking-wide uppercase text-3xl lg:font-semibold lg:text-5xl px-3.5"
         >
           <p class="letters letters-1 absolute left-11">Hi, I am Vaibhav...</p>
           <p class="letters letters-2 absolute left-4">DevOps Engineer</p>
@@ -169,19 +172,19 @@
         <div class="balls">
           <div
             id="ball-1"
-            class="absolute rounded-full h-24 w-24 bg-green-500 -z-10"
+            class="absolute rounded-full h-24 w-24 bg-green-500"
           ></div>
           <div
             id="ball-2"
-            class="absolute rounded-full h-8 w-8 bg-orange-500 -z-10"
+            class="absolute rounded-full h-8 w-8 bg-orange-500"
           ></div>
           <div
             id="ball-3"
-            class="absolute rounded-full h-36 w-36 bg-red-500 -z-10 lg:h-48 lg:w-48"
+            class="absolute rounded-full h-36 w-36 bg-red-500 lg:h-48 lg:w-48"
           ></div>
           <div
             id="ball-4"
-            class="absolute rounded-full h-12 w-12 bg-violet-500 -z-10"
+            class="absolute rounded-full h-12 w-12 bg-violet-500"
           ></div>
         </div>
         <h1 class="text-zinc-50 text-4xl py-14 lg:py-5">
@@ -203,7 +206,9 @@
         id="skill-section"
         class="section flex flex-col items-center h-screen overflow-hidden"
       >
-        <h1 class="text-zinc-50 text-4xl pt-14 pb-10 lg:py-5">
+        <h1
+          class="text-zinc-50 text-4xl pt-14 pb-10 lg:py-5 md:text-5xl md:mb-6"
+        >
           <i class="fa-solid fa-marker"></i> Skills
         </h1>
 
@@ -213,90 +218,162 @@
         </div>
         <div
           id="skills"
-          class="flex flex-wrap justify-around text-zinc-50 w-screen text-center z-10"
+          class="flex flex-wrap justify-around text-zinc-50 w-screen text-center"
         >
-          <div id="azure" class="m-5 skill">
+          <div id="azure" class="m-5 skill md:mx-16">
             <img
               src="assets/images/azure_image.png"
-              class="w-16 h-16 block mb-2"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
             />
             <p>Azure</p>
           </div>
-          <div id="k8s" class="m-5 skill">
+          <div id="k8s" class="m-5 skill md:mx-16">
             <img
               src="assets/images/K8s_image.png"
-              class="w-16 h-16 ml-1.5 block mb-2"
+              class="w-16 h-16 ml-1.5 block mb-2 md:h-24 md:w-24"
             />
             <p>Kubernetes</p>
           </div>
-          <div id="html" class="m-5 skill">
+          <div id="html" class="m-5 skill md:mx-16">
             <img
               src="assets/images/html_image.png"
-              class="w-16 h-16 block mb-2"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
             />
             <p>HTML</p>
           </div>
-          <div id="css" class="m-5 skill">
+          <div id="css" class="m-5 skill md:mx-16">
             <img
               src="assets/images/css_image.png"
-              class="w-16 h-16 block mb-2"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
             />
             <p>CSS</p>
           </div>
-          <div id="js" class="m-5 skill">
+          <div id="js" class="m-5 skill md:mx-16">
             <img
               src="assets/images/javaScript.png"
-              class="w-16 h-16 block mb-2"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
             />
             <p>JavaScript</p>
           </div>
-          <div id="helm" class="m-5 skill">
+          <div id="helm" class="m-5 skill md:mx-16">
             <img
               src="assets/images/helm_image.png"
-              class="w-16 h-16 block mb-2"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
             />
             <p>Helm</p>
           </div>
-          <div id="react" class="m-5 skill">
-            <img src="assets/images/react.png" class="w-16 h-16 block mb-2" />
+          <div id="react" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/react.png"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
+            />
             <p>ReactJS</p>
           </div>
-          <div id="mongo" class="m-5 skill">
-            <img src="assets/images/mongo.png" class="w-16 h-16 block mb-2" />
+          <div id="mongo" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/mongo.png"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
+            />
             <p>MongoDB</p>
           </div>
-          <div id="node" class="m-5 skill">
-            <img src="assets/images/nodeJs.png" class="w-16 h-16 block mb-2" />
+          <div id="node" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/nodeJs.png"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
+            />
             <p>NodeJS</p>
           </div>
-          <div id="tf" class="m-5 skill">
+          <div id="tf" class="m-5 skill md:mx-16">
             <img
               src="assets/images/terraform_image.png"
-              class="w-16 h-16 block mb-2"
+              class="w-16 h-16 block mb-2 md:h-24 md:w-24"
             />
             <p>Terraform</p>
           </div>
         </div>
       </div>
+
       <!-- End of Skill Section -->
-      <div id="exp-section" class="section"></div>
-      <div id="achieve-section" class="section"></div>
-      <div id="portfolio" class="section"></div>
-      <div id="contact-section" class="section"></div>
+
+      <div
+        id="exp-section"
+        class="section flex flex-col items-center overflow-hidden"
+      >
+        <h1 class="text-zinc-50 text-4xl pt-14 lg:py-5">
+          <i class="fa-solid fa-marker"></i> Projects
+        </h1>
+        <div class="swiper w-[95%] lg:w-[50%]">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img
+                src="assets/images/meals-app.png"
+                alt="Project Image"
+                class="project-image block ml-auto mr-auto rounded p-12 w-[90%] mb-12 lg:w-[70%]"
+              />
+              <div
+                class="source w-full absolute bottom-10 text-center text-2xl lg:text-4xl"
+              >
+                <i class="info fa-solid fa-circle-info mr-4 text-white"></i>
+                <i class="github fa-brands fa-github mr-4 ml-4 text-white"></i>
+                <i class="url fa-regular fa-paper-plane ml-4 text-white"></i>
+              </div>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+        <!-- Project Modal -->
+        <div
+          id="modal-0"
+          class="modal transition-[height] duration-700 overflow-hidden flex justify-center items-center absolute w-full h-full z-30 text-white"
+        >
+          <div
+            class="modal-container overflow-hidden flex flex-col basis-11/12 relative lg:basis-10/12 h-[80%] p-4 text-sm"
+          >
+            <i
+              class="close-modal fa-solid fa-circle-xmark absolute right-5 top-5 text-2xl"
+            ></i>
+            <h1 class="font-black text-center text-4xl mt-8 mb-5">
+              Meals App
+            </h1>
+            <p >
+              Meals App allows users to search for meals and explore its
+              recipe. Some of its functionality are as follow:
+              <br><br>
+              <ul class="list-disc [&_*]:mx-8">
+                <li>Search functionality based on input string</li>
+                <li>Meal page with dynamic table for ingredients and instructions</li>
+                <li>Favourite meal bucket for users to add and remove meals</li>
+              </ul>
+              <br />This project is made with HTML, CSS and advanced
+              JavaScript concepts such as web and JS APIs, asyn/await, loader
+              control, localStorage and deboucing for better user experience and
+              application optimization.
+            </p>
+            <br /><br>
+            <div class="tech-stack [&_*]:px-4 [&_*]:py-2  [&_*]:mx-2">
+              <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div id="achieve-section" class="section"></div>
+    <div id="portfolio" class="section"></div>
+    <div id="contact-section" class="section"></div>
 
     <script src="src/js/script.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
+    <!-- Swiper JS script -->
+    <script src="src/js/swiper.js"></script>
   </body>
 </html>

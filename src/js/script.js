@@ -2,6 +2,8 @@ const container = document.getElementById("container");
 const hamburger_icon_div = document.getElementById("hamburger-icon");
 const hamburger_list_items = document.querySelectorAll("#hamburger-list a li");
 const section_div = document.querySelectorAll(".section");
+const info_icon = document.querySelectorAll(".info");
+const close_modal_icon = document.querySelectorAll(".close-modal");
 
 let flag = true;
 
@@ -16,6 +18,22 @@ const navBarOptionSelection = function (index) {
     hamburger_list_items[i].style.backgroundColor = "";
   }
 };
+
+// Open modal once project info button is opened
+info_icon.forEach((ele, index) => {
+  ele.addEventListener("click", () => {
+    const modal = document.getElementById(`modal-${index}`);
+    modal.classList.remove("hide-modal");
+  });
+});
+
+//Close project modal event
+close_modal_icon.forEach((ele, index) => {
+  ele.addEventListener("click", () => {
+    const modal = document.getElementById(`modal-${index}`);
+    modal.classList.add("hide-modal");
+  });
+});
 
 // ##############################################  ANIMATION #########################################
 
@@ -264,13 +282,6 @@ const skillAnimation = anime({
   easing: "easeInOutSine",
   autoplay: false,
 });
-// Moonlight
-let moonlightAnimation = anime({
-  easing: "easeInOutQuad",
-  autoplay: false,
-  translateY: [0, 120],
-  rotate: ["0deg", "360deg"],
-});
 
 // ##############################################   EVENTS  ##########################################
 
@@ -299,15 +310,15 @@ window.onscroll = function (e) {
   animateOnScroll(
     aboutAnimation,
     document.getElementById("about-section"),
-    500,
+    600,
     600
   );
 
   animateOnScroll(
     skillAnimation,
     document.getElementById("skill-section"),
-    800,
-    800
+    1000,
+    1000
   );
 
   //balls animation
@@ -316,12 +327,4 @@ window.onscroll = function (e) {
   animateOnScroll(ball2Animation, document.getElementById("ball-2"), 600, 600);
   animateOnScroll(ball3Animation, document.getElementById("ball-3"), 600, 600);
   animateOnScroll(ball4Animation, document.getElementById("ball-4"), 600, 600);
-
-  // moonlight animation
-  animateOnScroll(
-    moonlightAnimation,
-    document.getElementById("moonlight"),
-    600,
-    600
-  );
 };
