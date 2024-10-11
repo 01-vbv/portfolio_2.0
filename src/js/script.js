@@ -283,6 +283,22 @@ const skillAnimation = anime({
   autoplay: false,
 });
 
+// ## Project Section
+project_container = anime({
+  targets: "#project-slides",
+  scale: [0, 1],
+  opacity: [0, 1],
+  easing: "easeInOutSine",
+  autoplay: false,
+});
+
+const skills = anime({
+  targets: ".skill",
+  translateY: [20, 0],
+  delay: anime.stagger(100, { start: 800 }), // increase delay by 100ms for each elements.
+  autoplay: false,
+});
+
 // ##############################################   EVENTS  ##########################################
 
 //On scroll event
@@ -296,6 +312,7 @@ window.onscroll = function (e) {
     navBarOptionSelection(1);
   } else if (section_div[2].getBoundingClientRect().top >= -10) {
     navBarOptionSelection(2);
+    skills.play();
   } else if (section_div[3].getBoundingClientRect().top >= -10) {
     navBarOptionSelection(3);
   } else if (section_div[4].getBoundingClientRect().top >= -10) {
@@ -317,8 +334,8 @@ window.onscroll = function (e) {
   animateOnScroll(
     skillAnimation,
     document.getElementById("skill-section"),
-    1000,
-    1000
+    500,
+    500
   );
 
   //balls animation
@@ -327,4 +344,12 @@ window.onscroll = function (e) {
   animateOnScroll(ball2Animation, document.getElementById("ball-2"), 600, 600);
   animateOnScroll(ball3Animation, document.getElementById("ball-3"), 600, 600);
   animateOnScroll(ball4Animation, document.getElementById("ball-4"), 600, 600);
+
+  //project animation
+  animateOnScroll(
+    project_container,
+    document.getElementById("project-slides"),
+    200,
+    450
+  );
 };
