@@ -334,8 +334,8 @@ window.onscroll = function (e) {
   animateOnScroll(
     skillAnimation,
     document.getElementById("skill-section"),
-    500,
-    500
+    400,
+    600
   );
 
   //balls animation
