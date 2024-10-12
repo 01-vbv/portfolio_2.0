@@ -209,7 +209,7 @@ const aboutAnimation = anime({
   translateY: [250, 10],
   opacity: [0, 1],
   elasticity: 200,
-  easing: "easeInOutSine",
+  easing: "linear",
   autoplay: false,
 });
 
@@ -276,9 +276,7 @@ ball4Animation = anime({
 
 const skillAnimation = anime({
   targets: "#skills, #skill-section h1",
-  translateY: [250, 10],
   opacity: [0, 1],
-  elasticity: 200,
   easing: "linear",
   autoplay: false,
 });
@@ -291,13 +289,13 @@ const skills = anime({
 });
 
 // ## Project Section
-// project_container = anime({
-//   targets: "#project-slides",
-//   scale: [0, 1],
-//   opacity: [0, 1],
-//   easing: "easeInOutSine",
-//   autoplay: false,
-// });
+project_container = anime({
+  targets: "#project-slides",
+  scale: [0, 1],
+  opacity: [0, 1],
+  easing: "easeInOutSine",
+  autoplay: false,
+});
 
 // ##############################################   EVENTS  ##########################################
 
@@ -345,13 +343,13 @@ window.onscroll = function (e) {
   animateOnScroll(ball3Animation, document.getElementById("ball-3"), 600, 600);
   animateOnScroll(ball4Animation, document.getElementById("ball-4"), 600, 600);
 
-  //project animation
-  // animateOnScroll(
-  //   project_container,
-  //   document.getElementById("project-slides"),
-  //   200,
-  //   450
-  // );
+  // project animation
+  animateOnScroll(
+    project_container,
+    document.getElementById("project-slides"),
+    600,
+    650
+  );
 };
 
 var path = anime.path(".demo circle");
