@@ -6,7 +6,10 @@ const info_icon = document.querySelectorAll(".info");
 const close_modal_icon = document.querySelectorAll(".close-modal");
 
 let flag = true;
-let animateOnce = true;
+let animateOnce = {
+  moon: true,
+  astronaut: true,
+};
 
 // ########################################## Custom JS #############################################
 
@@ -308,6 +311,31 @@ project_container = anime({
   autoplay: false,
 });
 
+//## Experience Section
+let path1 = anime.path(".motion-path-demo .path1");
+
+const astronaut_1 = anime({
+  targets: ".el1",
+  translateX: path1("x"),
+  translateY: path1("y"),
+  rotate: path1("angle"),
+  easing: "linear",
+  duration: 2000,
+  autoplay: false,
+});
+
+let path2 = anime.path(".motion-path-demo .path2");
+
+const astronaut_2 = anime({
+  targets: ".el2",
+  translateX: path2("x"),
+  translateY: path2("y"),
+  rotate: path2("angle"),
+  easing: "linear",
+  duration: 2000,
+  autoplay: false,
+});
+
 // ##############################################   EVENTS  ##########################################
 
 //On scroll event
@@ -322,14 +350,19 @@ window.onscroll = function (e) {
   } else if (section_div[2].getBoundingClientRect().top >= -10) {
     navBarOptionSelection(2);
     // skills.play();
-    if (animateOnce) {
+    if (animateOnce.moon) {
       moonAnimation.play();
-      animateOnce = !animateOnce;
+      animateOnce.moon = !animateOnce.moon;
     }
   } else if (section_div[3].getBoundingClientRect().top >= -10) {
     navBarOptionSelection(3);
   } else if (section_div[4].getBoundingClientRect().top >= -10) {
     navBarOptionSelection(4);
+    if (animateOnce.astronaut) {
+      astronaut_1.play();
+      astronaut_2.play();
+      animateOnce.astronaut = !animateOnce.astronaut;
+    }
   } else if (section_div[5].getBoundingClientRect().top >= -10) {
     navBarOptionSelection(5);
   } else if (section_div[6].getBoundingClientRect().top >= -10) {
@@ -361,15 +394,3 @@ window.onscroll = function (e) {
     600
   );
 };
-
-var path = anime.path(".demo circle");
-
-anime({
-  targets: ".el",
-  translateX: path("x"),
-  translateY: path("y"),
-  rotate: path("angle"),
-  easing: "linear",
-  duration: 2000,
-  loop: true,
-});
