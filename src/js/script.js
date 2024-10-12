@@ -274,13 +274,13 @@ ball4Animation = anime({
 
 // ## Skill Section
 
-const skillAnimation = anime({
-  targets: "#skills, #skill-section h1",
-  translateY: [250, 10],
-  opacity: [0, 1],
-  easing: "linear",
-  autoplay: false,
-});
+// const skillAnimation = anime({
+//   targets: "#skills, #skill-section h1",
+//   translateY: [250, 10],
+//   opacity: [0, 1],
+//   easing: "linear",
+//   autoplay: false,
+// });
 
 const skills = anime({
   targets: ".skill",
