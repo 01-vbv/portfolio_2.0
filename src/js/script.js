@@ -330,12 +330,12 @@ window.onscroll = function (e) {
     600
   );
 
-  animateOnScroll(
-    skillAnimation,
-    document.getElementById("skill-section"),
-    600,
-    600
-  );
+  // animateOnScroll(
+  //   skillAnimation,
+  //   document.getElementById("skill-section"),
+  //   600,
+  //   600
+  // );
 
   //balls animation
 
