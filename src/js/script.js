@@ -6,6 +6,7 @@ const info_icon = document.querySelectorAll(".info");
 const close_modal_icon = document.querySelectorAll(".close-modal");
 
 let flag = true;
+let animateOnce = true;
 
 // ########################################## Custom JS #############################################
 
@@ -281,11 +282,20 @@ ball4Animation = anime({
 //   easing: "linear",
 //   autoplay: false,
 // });
+const moonAnimation = anime({
+  targets: "#moonlight",
+  scale: [0, 1],
+  opacity: [0, 1],
+  autoplay: false,
+  duration: 1200,
+  delay: 800,
+});
 
 const skills = anime({
-  targets: ".skill",
-  translateY: [20, 0],
-  delay: anime.stagger(100, { start: 800 }), // increase delay by 100ms for each elements.
+  targets: "#skills",
+  translateY: [250, 10],
+  opacity: [0, 1],
+  easing: "linear",
   autoplay: false,
 });
 
@@ -311,7 +321,11 @@ window.onscroll = function (e) {
     navBarOptionSelection(1);
   } else if (section_div[2].getBoundingClientRect().top >= -10) {
     navBarOptionSelection(2);
-    skills.play();
+    // skills.play();
+    if (animateOnce) {
+      moonAnimation.play();
+      animateOnce = !animateOnce;
+    }
   } else if (section_div[3].getBoundingClientRect().top >= -10) {
     navBarOptionSelection(3);
   } else if (section_div[4].getBoundingClientRect().top >= -10) {
@@ -330,12 +344,7 @@ window.onscroll = function (e) {
     600
   );
 
-  // animateOnScroll(
-  //   skillAnimation,
-  //   document.getElementById("skill-section"),
-  //   600,
-  //   600
-  // );
+  animateOnScroll(skills, document.getElementById("skill-section"), 600, 600);
 
   //balls animation
 
