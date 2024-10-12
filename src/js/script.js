@@ -276,6 +276,7 @@ ball4Animation = anime({
 
 const skillAnimation = anime({
   targets: "#skills, #skill-section h1",
+  translateY: [250, 10],
   opacity: [0, 1],
   easing: "linear",
   autoplay: false,
@@ -332,7 +333,7 @@ window.onscroll = function (e) {
   animateOnScroll(
     skillAnimation,
     document.getElementById("skill-section"),
-    400,
+    600,
     600
   );
 
@@ -347,8 +348,8 @@ window.onscroll = function (e) {
   animateOnScroll(
     project_container,
     document.getElementById("project-slides"),
-    600,
-    650
+    350,
+    600
   );
 };
 
