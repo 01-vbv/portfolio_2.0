@@ -291,13 +291,13 @@ const moonAnimation = anime({
   delay: 800,
 });
 
-const skills = anime({
-  targets: "#skills",
-  translateY: [250, 10],
-  opacity: [0, 1],
-  easing: "linear",
-  autoplay: false,
-});
+// const skills = anime({
+//   targets: "#skills",
+//   translateY: [250, 10],
+//   opacity: [0, 1],
+//   easing: "linear",
+//   autoplay: false,
+// });
 
 // ## Project Section
 project_container = anime({
@@ -344,7 +344,7 @@ window.onscroll = function (e) {
     600
   );
 
-  animateOnScroll(skills, document.getElementById("skill-section"), 600, 600);
+  // animateOnScroll(skills, document.getElementById("skill-section"), 600, 600);
 
   //balls animation
 
