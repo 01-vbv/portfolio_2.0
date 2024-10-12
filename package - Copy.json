@@ -1,0 +1,21 @@
+{
+  "name": "0_resume_2.0",
+  "version": "1.0.0",
+  "description": "Resume Project 2.0 - Responsive",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tailwindcss -i ./src/stylesheets/style.css -o ./src/stylesheets/output.css --watch",
+    "build-css": "tailwindcss build -i ./src/stylesheets/style.css -o ./src/stylesheets/output.css ",
+    "watch-css": "tailwindcss build -i ./src/stylesheets/style.css -o ./src/stylesheets/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^3.2.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}

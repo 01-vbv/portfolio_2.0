@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+  <!-- Head -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/stylesheets/output.css" type="text/css" />
+    <link rel="stylesheet" href="src/stylesheets/custom.css" type="text/css" />
+
+    <!-- Swiper CSS Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/b3348ae33f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/js/anime.js"></script>
+    <script src="node_modules/animejs/lib/anime.min.js"></script>
+  </head>
+
+  <!-- Body -->
+  <body class="bg-gray-900 w-screen">
+    <!--############### Navigation Section ####################-->
+    <nav class="fixed w-screen z-40">
+      <!-- Hamburger Icon-->
+      <div id="hamburger-icon">
+        <i class="fa-solid fa-bars text-3xl text-white p-3"></i>
+      </div>
+      <!-- Hamburger List -->
+      <ul
+        role="list"
+        id="hamburger-list"
+        class="hamburger-list-class flex-col space-y-4 [&_*]:text-zinc-50 [&_*]:py-3 [&_li]:bg-sky-500/[.06] [&_*]:my-3 [&_*]"
+        dir="ltr"
+      >
+        <a href="#home"><li>Home</li></a>
+        <a href="#about-section"><li>About</li></a>
+        <a href="#skill-section"><li>Skills</li></a>
+        <a href="#project-section"><li>Project</li></a>
+        <a href="#achieve-section"><li>Achievement</li></a>
+        <a href="#portfolio"><li>Portfolio</li></a>
+        <a href="#contact-section"><li>Contact</li></a>
+      </ul>
+    </nav>
+    <!-- End of Nav Bar -->
+
+    <!-- Sections Container -->
+    <div id="container" class="z-20">
+      <!--################ Home section #################-->
+      <section
+        id="home"
+        class="section flex flex-col items-center h-screen overflow-hidden"
+      >
+        <!-- Profile Image -->
+        <div
+          class="profile-image w-52 mb-10 pt-20 lg:w-72 lg:mb-24 text-center"
+        >
+          <svg viewbox="0 0 100 100" class="m-auto">
+            <!-- Clip Path Config -->
+            <clipPath id="clip1">
+              <polygon
+                id="poly"
+                points="50 0, 100 50, 80 100, 20 100, 0 50"
+                fill="none"
+              ></polygon>
+            </clipPath>
+            <!-- Clip image -->
+            <g clip-path="url('#clip1')">
+              <image
+                xlink:href="assets/images/self.jpg"
+                width="100%"
+                height="100%"
+              />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Description -->
+        <div
+          class="description text-zinc-50 tracking-wide uppercase text-3xl lg:font-semibold lg:text-5xl px-3.5"
+        >
+          <p class="letters letters-1 absolute left-11">Hi, I am Vaibhav...</p>
+          <p class="letters letters-2 absolute left-4">DevOps Engineer</p>
+          <p class="letters letters-3 absolute left-4">Mern Developer</p>
+        </div>
+
+        <div class="dots mt-28 text-xl lg:mt-0">
+          <div
+            class="planets flex flex-col items-center justify-center lg:absolute lg:right-80 lg:top-96"
+          >
+            <!-- Sun -->
+            <div id="sun">
+              <svg
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 420 420"
+                xml:space="preserve"
+                class="h-36"
+              >
+                <g>
+                  <polygon
+                    style="fill: #f5c525"
+                    points="420,210 375.774,247.857 399.238,301.145 342.926,315.986 340.945,374.184 283.764,363.211 
+		256.724,414.779 210,380 163.276,414.779 136.236,363.211 79.055,374.184 77.073,315.986 20.762,301.144 44.226,247.858 0,210 
+		44.226,172.143 20.762,118.855 77.074,104.014 79.055,45.816 136.236,56.789 163.276,5.221 210,40 256.723,5.221 283.764,56.789 
+		340.945,45.816 342.927,104.014 399.238,118.856 375.774,172.142 	"
+                  />
+                  <circle style="fill: #f8a805" cx="210" cy="210" r="140" />
+                </g>
+              </svg>
+            </div>
+
+            <!-- Earth -->
+            <div
+              id="earth"
+              class="absolute left-44 rounded-full h-6 w-6 lg:h-11 lg:w-11 lg:left-56"
+            >
+              <img
+                src="assets/images/earth.png"
+                class="h-6 w-6 lg:h-11 lg:w-11"
+              />
+            </div>
+          </div>
+
+          <!-- Stars -->
+          <!-- <div class="stars absolute right-5 lg:right-20 lg:bottom-20">
+            <i class="fa-solid fa-star text-lg"></i>
+          </div>
+          <div class="stars absolute right-14 bottom-64">
+            <i class="fa-solid fa-star text-sm"></i>
+          </div>
+
+          <div class="stars absolute top-20 left-10 lg:left-48">
+            <i class="fa-solid fa-star text-lg"></i>
+          </div>
+
+          <div class="stars absolute top-60 right-12 lg:right-28">
+            <i class="fa-solid fa-star text-base"></i>
+          </div>
+          <div
+            class="stars absolute right-48 bottom-5 lg:right-2/4 lg:bottom-48"
+          >
+            <i class="fa-solid fa-star text-sm"></i>
+          </div>
+
+          <div class="stars absolute left-10 bottom-40 lg:bottom-10 lg:left-80">
+            <i class="fa-solid fa-star text-sm"></i>
+          </div>
+
+          <div class="stars absolute left-10 top-60 lg:left-52 lg:top-96">
+            <i class="fa-solid fa-star text-lg"></i>
+          </div>
+
+          <div class="stars absolute top-10 right-20 lg:top-40 lg:right-64">
+            <i class="fa-solid fa-star text-base"></i>
+          </div> -->
+        </div>
+      </section>
+      <!-- End of Home Section -->
+
+      <!--############## Abount Section ###################-->
+      <div
+        id="about-section"
+        class="section flex flex-col items-center h-screen overflow-hidden"
+      >
+        <div class="balls">
+          <div
+            id="ball-1"
+            class="absolute rounded-full h-24 w-24 bg-green-500"
+          ></div>
+          <div
+            id="ball-2"
+            class="absolute rounded-full h-8 w-8 bg-orange-500"
+          ></div>
+          <div
+            id="ball-3"
+            class="absolute rounded-full h-36 w-36 bg-red-500 lg:h-48 lg:w-48"
+          ></div>
+          <div
+            id="ball-4"
+            class="absolute rounded-full h-12 w-12 bg-violet-500"
+          ></div>
+        </div>
+        <h1 class="text-zinc-50 text-4xl py-14 lg:py-5">
+          <i class="fa-solid fa-marker"></i> About Me
+        </h1>
+        <p
+          class="text-zinc-50 text-xl px-3.5 tracking-widest break-normal font-normal text-wrap text-center leading-loose lg:px-28"
+        >
+          Hello, I'm Vaibhav Dhaulakhandi.<br />
+          I am DevOps + MERN Stack Engineer with years of hands on Experience. I
+          enjoy building sites, apps with new features and deploying them in
+          cloud platform and onPrem Solutions.
+        </p>
+      </div>
+      <!-- End of About Section -->
+
+      <!-- ########### Skill Section ############## -->
+      <div
+        id="skill-section"
+        class="section flex flex-col items-center h-screen overflow-hidden"
+      >
+        <h1
+          class="text-zinc-50 text-4xl pt-14 pb-5 lg:py-5 md:text-5xl md:mb-6"
+        >
+          <i class="fa-solid fa-marker"></i> Skills
+        </h1>
+
+        <!-- MoonLight -->
+        <div id="moonlight" class="absolute z-0">
+          <img src="assets/images/moon-removebg-preview.png" id="moon" />
+        </div>
+        <div
+          id="skills"
+          class="flex flex-wrap justify-around text-zinc-50 text-center"
+        >
+           <div id="azure"  class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/azure_image.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>Azure</p>
+          </div>
+          <div id="k8s"  class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/K8s_image.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>Kubernetes</p>
+          </div>
+          <div id="html"  class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/html_image.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>HTML</p>
+          </div>
+           <div id="css"  class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/css_image.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>CSS</p>
+          </div>
+          <div id="js"  class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/javaScript.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>JavaScript</p>
+          </div> 
+          <div id="helm" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/helm_image.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>Helm</p>
+          </div>
+          <div id="react" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/react.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>ReactJS</p>
+          </div>
+          <div id="mongo" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/mongo.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>MongoDB</p>
+          </div>
+          <div id="node" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/nodeJs.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>NodeJS</p>
+          </div>
+          <div id="tf" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/terraform_image.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>Terraform</p>
+          </div>
+          <div id="java" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/java.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>Java</p>
+          </div>
+          <div id="docker" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/docker.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>Docker</p>
+          </div>
+          <div id="firebase" class="m-5 skill md:mx-16">
+            <img
+              src="assets/images/firebase.png"
+              class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
+            />
+            <p>Firebase</p>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- End of Skill Section -->
+
+      <!-- Project Section -->
+      <div
+        id="project-section"
+        class="section flex flex-col items-center h-screen overflow-hidden"
+      >
+        <h1 class="text-zinc-50 text-4xl pt-14  lg:py-5">
+          <i class="fa-solid fa-marker"></i> Projects
+        </h1>
+        <div id="project-slides" class="swiper w-[95%] lg:w-[50%]">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <img
+                src="assets/images/meals-app.png"
+                alt="Project Image"
+                class="project-image block ml-auto mr-auto rounded p-12 w-[100%] mb-12 lg:w-[70%]"
+              />
+              <div
+                class="source w-full absolute bottom-10 text-center text-2xl lg:text-4xl"
+              >
+                <i class="info fa-solid fa-circle-info mr-4 text-white"></i>
+                <i class="github fa-brands fa-github mr-4 ml-4 text-white"></i>
+                <i class="url fa-regular fa-paper-plane ml-4 text-white"></i>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <img
+                src="assets/images/portfolio.png"
+                alt="Project Image"
+                class="project-image block ml-auto mr-auto rounded p-12 w-[100%] mb-12 lg:w-[70%]"
+              />
+              <div
+                class="source w-full absolute bottom-10 text-center text-2xl lg:text-4xl"
+              >
+                <i class="info fa-solid fa-circle-info mr-4 text-white"></i>
+                <i class="github fa-brands fa-github mr-4 ml-4 text-white"></i>
+                <i class="url fa-regular fa-paper-plane ml-4 text-white"></i>
+              </div>
+            </div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <!-- pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- navigation buttons -->
+          <!-- font size was not getting applied with after:, so using stylesheet -->
+          <div class="swiper-slider-button swiper-button-prev after:text-white after:mt-[-50px] after:mr-4 hover:font-black hover:text-emerald-400"></div> 
+          <div class="swiper-slider-button swiper-button-next after:text-white after:mt-[-50px] after:ml-4 hover:font-black hover:text-emerald-400"></div>
+        </div>
+
+        <!-- Project Modal -->
+        <!-- Slide 1 Modal -->
+        <div
+          id="modal-0"
+          class="modal transition-[height] duration-700 overflow-hidden flex justify-center items-center absolute w-full h-full z-30 text-white hide-modal"
+        >
+          <div
+            class="modal-container overflow-hidden flex flex-col basis-11/12 relative lg:basis-10/12 min-h-[80%] p-4 text-sm"
+          >
+            <i
+              class="close-modal fa-solid fa-circle-xmark absolute right-5 top-5 text-2xl"
+            ></i>
+            <h1 class="font-black text-center text-4xl mt-8 mb-5">
+              Meals App
+            </h1>
+            <p >
+              Meals App allows users to search for meals and explore its
+              recipe. Some of its functionality are as follow:
+              <br><br>
+              <ul class="list-disc [&_*]:mx-4">
+                <li>Search functionality based on input string</li>
+                <li>Meal page with dynamic table for ingredients and instructions</li>
+                <li>Favourite meal bucket for users to add and remove meals</li>
+              </ul>
+              <br />This project is made with HTML, CSS and advanced
+              JavaScript concepts such as web and JS APIs, asyn/await, loader
+              control, localStorage and deboucing for better user experience and
+              application optimization.
+            </p>
+            <br />
+            <div class="tech-stack flex flex-wrap [&_*]:px-4 [&_*]:py-2 [&_*]:mx-4 [&_*]:my-2">
+              <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+         <!-- Slide 2 Modal -->
+         <div
+         id="modal-1"
+         class="modal transition-[height] duration-700 overflow-hidden flex justify-center items-center absolute w-full h-full z-30 text-white hide-modal"
+       >
+         <div
+           class="modal-container overflow-hidden flex flex-col basis-11/12 relative lg:basis-10/12 h-[80%] p-4 text-sm"
+         >
+           <i
+             class="close-modal fa-solid fa-circle-xmark absolute right-5 top-5 text-2xl"
+           ></i>
+           <h1 class="font-black text-center text-4xl mt-8 mb-5">
+             Portfolio App
+           </h1>
+           <p >
+             Meals App allows users to search for meals and explore its
+             recipe. Some of its functionality are as follow:
+             <br><br>
+             <ul class="list-disc [&_*]:mx-8">
+               <li>Search functionality based on input string</li>
+               <li>Meal page with dynamic table for ingredients and instructions</li>
+               <li>Favourite meal bucket for users to add and remove meals</li>
+             </ul>
+             <br />This project is made with HTML, CSS and advanced
+             JavaScript concepts such as web and JS APIs, asyn/await, loader
+             control, localStorage and deboucing for better user experience and
+             application optimization.
+           </p>
+           <br /><br>
+           <div class="tech-stack [&_*]:px-4 [&_*]:py-2  [&_*]:mx-2">
+             <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+           </div>
+         </div>
+       </div>
+      </div>
+    </div>
+    
+    <div id="achieve-section" class="section flex flex-col items-center h-screen overflow-hidden">
+      sdfsd
+     <svg class="border" viewbox="0 0 300 300">
+
+     </svg>
+      
+    </div>
+    <div id="portfolio" class="section flex flex-col items-center h-screen overflow-hidden"></div>
+    <div id="contact-section" class="section flex flex-col items-center h-screen overflow-hidden"></div>
+
+    <script src="src/js/script.js"></script>
+
+    <!-- Swiper JS script -->
+    <script src="src/js/swiper.js"></script>
+  </body>
+</html>
