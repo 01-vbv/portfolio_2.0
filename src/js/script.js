@@ -279,16 +279,7 @@ const skillAnimation = anime({
   translateY: [250, 10],
   opacity: [0, 1],
   elasticity: 200,
-  easing: "easeInOutSine",
-  autoplay: false,
-});
-
-// ## Project Section
-project_container = anime({
-  targets: "#project-slides",
-  scale: [0, 1],
-  opacity: [0, 1],
-  easing: "easeInOutSine",
+  easing: "linear",
   autoplay: false,
 });
 
@@ -298,6 +289,15 @@ const skills = anime({
   delay: anime.stagger(100, { start: 800 }), // increase delay by 100ms for each elements.
   autoplay: false,
 });
+
+// ## Project Section
+// project_container = anime({
+//   targets: "#project-slides",
+//   scale: [0, 1],
+//   opacity: [0, 1],
+//   easing: "easeInOutSine",
+//   autoplay: false,
+// });
 
 // ##############################################   EVENTS  ##########################################
 
@@ -346,10 +346,22 @@ window.onscroll = function (e) {
   animateOnScroll(ball4Animation, document.getElementById("ball-4"), 600, 600);
 
   //project animation
-  animateOnScroll(
-    project_container,
-    document.getElementById("project-slides"),
-    200,
-    450
-  );
+  // animateOnScroll(
+  //   project_container,
+  //   document.getElementById("project-slides"),
+  //   200,
+  //   450
+  // );
 };
+
+var path = anime.path(".demo circle");
+
+anime({
+  targets: ".el",
+  translateX: path("x"),
+  translateY: path("y"),
+  rotate: path("angle"),
+  easing: "linear",
+  duration: 2000,
+  loop: true,
+});
