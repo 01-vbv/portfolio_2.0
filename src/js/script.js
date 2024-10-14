@@ -4,6 +4,7 @@ const hamburger_list_items = document.querySelectorAll("#hamburger-list a li");
 const section_div = document.querySelectorAll(".section");
 const info_icon = document.querySelectorAll(".info");
 const close_modal_icon = document.querySelectorAll(".close-modal");
+const form_submit_btn = document.getElementById("form-submit-btn");
 
 let flag = true;
 let animateOnce = {
@@ -365,6 +366,69 @@ const astronaut_2_lg = anime({
   delay: 800,
 });
 
+//## Contact Section
+const sendAnimation = anime.timeline({
+  easing: "easeOutExpo",
+  duration: 750,
+  autoplay: false,
+});
+
+// Add children
+sendAnimation
+  .add({
+    targets: ".contact-form form",
+    scale: [1, 0],
+    duration: 2000,
+  })
+  .add({
+    targets: ".contact-form svg",
+    duration: 2000,
+    scale: [0, 1],
+    easing: "easeInOutQuad",
+    begin: function () {
+      document.querySelector(".contact-form svg").style.display = "block";
+    },
+  })
+  .add({
+    targets: "#pocket",
+    points: [{ value: ["0 30  80 30  40 60"] }],
+    easing: "easeOutQuad",
+    duration: 2000,
+  })
+  .add({
+    targets: "#ufo",
+    translateX: ["-20vw", 0],
+    scale: [0, 1],
+    opacity: [0, 1],
+    easing: "easeOutQuad",
+    duration: 2000,
+  })
+  .add({
+    targets: "#envelop",
+    translateY: -450,
+    scale: [1, 0.5],
+    opacity: [1, 0],
+    easing: "easeOutQuad",
+    duration: 2000,
+  })
+  .add({
+    targets: "#ufo",
+    translateX: [0, 80],
+    scale: [1, 0],
+    opacity: [1, 0],
+    easing: "easeOutQuad",
+    duration: 2000,
+  })
+  .add({
+    targets: ".contact-form form",
+    scale: [0, 1],
+    duration: 2000,
+  });
+// .add({
+//   targets: '.basic-timeline-demo .el.triangle',
+//   translateX: 250,
+// });
+
 // ##############################################   EVENTS  ##########################################
 
 //On scroll event
@@ -425,3 +489,9 @@ window.onscroll = function (e) {
     600
   );
 };
+
+form_submit_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log(e.target.value);
+  sendAnimation.play();
+});

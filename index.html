@@ -205,9 +205,7 @@
         id="skill-section"
         class="section flex flex-col items-center h-screen overflow-hidden"
       >
-        <h1
-          class="text-zinc-50 text-4xl pt-14 pb-5 lg:py-5 md:text-5xl md:mb-6"
-        >
+        <h1 class="text-zinc-50 text-4xl py-12 lg:py-11">
           <i class="fa-solid fa-marker"></i> Skills
         </h1>
 
@@ -219,41 +217,41 @@
           id="skills"
           class="flex flex-wrap justify-around text-zinc-50 text-center"
         >
-           <div id="azure"  class="m-5 skill md:mx-16">
+          <div id="azure" class="m-5 skill md:mx-16">
             <img
               src="assets/images/azure_image.png"
               class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
             />
             <p>Azure</p>
           </div>
-          <div id="k8s"  class="m-5 skill md:mx-16">
+          <div id="k8s" class="m-5 skill md:mx-16">
             <img
               src="assets/images/K8s_image.png"
               class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
             />
             <p>Kubernetes</p>
           </div>
-          <div id="html"  class="m-5 skill md:mx-16">
+          <div id="html" class="m-5 skill md:mx-16">
             <img
               src="assets/images/html_image.png"
               class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
             />
             <p>HTML</p>
           </div>
-           <div id="css"  class="m-5 skill md:mx-16">
+          <div id="css" class="m-5 skill md:mx-16">
             <img
               src="assets/images/css_image.png"
               class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
             />
             <p>CSS</p>
           </div>
-          <div id="js"  class="m-5 skill md:mx-16">
+          <div id="js" class="m-5 skill md:mx-16">
             <img
               src="assets/images/javaScript.png"
               class="w-10 h-10 block mx-auto mb-2 md:h-24 md:w-24"
             />
             <p>JavaScript</p>
-          </div> 
+          </div>
           <div id="helm" class="m-5 skill md:mx-16">
             <img
               src="assets/images/helm_image.png"
@@ -310,7 +308,6 @@
             />
             <p>Firebase</p>
           </div>
-          
         </div>
       </div>
 
@@ -321,7 +318,7 @@
         id="project-section"
         class="section flex flex-col items-center h-screen overflow-hidden"
       >
-        <h1 class="text-zinc-50 text-4xl pt-14  lg:py-5">
+        <h1 class="text-zinc-50 text-4xl pt-14 lg:py-5">
           <i class="fa-solid fa-marker"></i> Projects
         </h1>
         <div id="project-slides" class="swiper w-[95%] lg:w-[50%]">
@@ -365,8 +362,12 @@
 
           <!-- navigation buttons -->
           <!-- font size was not getting applied with after:, so using stylesheet -->
-          <div class="swiper-slider-button swiper-button-prev after:text-white after:mt-[-50px] after:mr-4 hover:font-black hover:text-emerald-400"></div> 
-          <div class="swiper-slider-button swiper-button-next after:text-white after:mt-[-50px] after:ml-4 hover:font-black hover:text-emerald-400"></div>
+          <div
+            class="swiper-slider-button swiper-button-prev after:text-white after:mt-[-50px] after:mr-4 hover:font-black hover:text-emerald-400"
+          ></div>
+          <div
+            class="swiper-slider-button swiper-button-next after:text-white after:mt-[-50px] after:ml-4 hover:font-black hover:text-emerald-400"
+          ></div>
         </div>
 
         <!-- Project Modal -->
@@ -381,154 +382,300 @@
             <i
               class="close-modal fa-solid fa-circle-xmark absolute right-5 top-5 text-2xl"
             ></i>
-            <h1 class="font-black text-center text-4xl mt-8 mb-5">
-              Meals App
-            </h1>
-            <p >
-              Meals App allows users to search for meals and explore its
-              recipe. Some of its functionality are as follow:
-              <br><br>
-              <ul class="list-disc [&_*]:mx-4">
-                <li>Search functionality based on input string</li>
-                <li>Meal page with dynamic table for ingredients and instructions</li>
-                <li>Favourite meal bucket for users to add and remove meals</li>
-              </ul>
-              <br />This project is made with HTML, CSS and advanced
-              JavaScript concepts such as web and JS APIs, asyn/await, loader
-              control, localStorage and deboucing for better user experience and
-              application optimization.
+            <h1 class="font-black text-center text-4xl mt-8 mb-5">Meals App</h1>
+            <p>
+              Meals App allows users to search for meals and explore its recipe.
+              Some of its functionality are as follow:
+              <br /><br />
             </p>
+
+            <ul class="list-disc [&_*]:mx-4">
+              <li>Search functionality based on input string</li>
+              <li>
+                Meal page with dynamic table for ingredients and instructions
+              </li>
+              <li>Favourite meal bucket for users to add and remove meals</li>
+            </ul>
+            <br />This project is made with HTML, CSS and advanced JavaScript
+            concepts such as web and JS APIs, asyn/await, loader control,
+            localStorage and deboucing for better user experience and
+            application optimization.
+
             <br />
-            <div class="tech-stack flex flex-wrap [&_*]:px-4 [&_*]:py-2 [&_*]:mx-4 [&_*]:my-2">
+            <div
+              class="tech-stack flex flex-wrap [&_*]:px-4 [&_*]:py-2 [&_*]:mx-4 [&_*]:my-2"
+            >
               <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
             </div>
           </div>
         </div>
 
-         <!-- Slide 2 Modal -->
-         <div
-         id="modal-1"
-         class="modal transition-[height] duration-700 overflow-hidden flex justify-center items-center absolute w-full h-full z-30 text-white hide-modal"
-       >
-         <div
-           class="modal-container overflow-hidden flex flex-col basis-11/12 relative lg:basis-10/12 h-[80%] p-4 text-sm"
-         >
-           <i
-             class="close-modal fa-solid fa-circle-xmark absolute right-5 top-5 text-2xl"
-           ></i>
-           <h1 class="font-black text-center text-4xl mt-8 mb-5">
-             Portfolio App
-           </h1>
-           <p >
-             Meals App allows users to search for meals and explore its
-             recipe. Some of its functionality are as follow:
-             <br><br>
-             <ul class="list-disc [&_*]:mx-8">
-               <li>Search functionality based on input string</li>
-               <li>Meal page with dynamic table for ingredients and instructions</li>
-               <li>Favourite meal bucket for users to add and remove meals</li>
-             </ul>
-             <br />This project is made with HTML, CSS and advanced
-             JavaScript concepts such as web and JS APIs, asyn/await, loader
-             control, localStorage and deboucing for better user experience and
-             application optimization.
-           </p>
-           <br /><br>
-           <div class="tech-stack [&_*]:px-4 [&_*]:py-2  [&_*]:mx-2">
-             <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
-           </div>
-         </div>
-       </div>
+        <!-- Slide 2 Modal -->
+        <div
+          id="modal-1"
+          class="modal transition-[height] duration-700 overflow-hidden flex justify-center items-center absolute w-full h-full z-30 text-white hide-modal"
+        >
+          <div
+            class="modal-container overflow-hidden flex flex-col basis-11/12 relative lg:basis-10/12 h-[80%] p-4 text-sm"
+          >
+            <i
+              class="close-modal fa-solid fa-circle-xmark absolute right-5 top-5 text-2xl"
+            ></i>
+            <h1 class="font-black text-center text-4xl mt-8 mb-5">
+              Portfolio App
+            </h1>
+            <p>
+              Meals App allows users to search for meals and explore its recipe.
+              Some of its functionality are as follow:
+              <br /><br />
+            </p>
+
+            <ul class="list-disc [&_*]:mx-8">
+              <li>Search functionality based on input string</li>
+              <li>
+                Meal page with dynamic table for ingredients and instructions
+              </li>
+              <li>Favourite meal bucket for users to add and remove meals</li>
+            </ul>
+            <br />This project is made with HTML, CSS and advanced JavaScript
+            concepts such as web and JS APIs, asyn/await, loader control,
+            localStorage and deboucing for better user experience and
+            application optimization. <br /><br />
+            <div class="tech-stack [&_*]:px-4 [&_*]:py-2 [&_*]:mx-2">
+              <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div id="exp-section" class="section h-screen overflow-hidden text-center">
+      <div
+        id="exp-section"
+        class="section h-screen overflow-hidden text-center"
+      >
         <h1 class="text-zinc-50 text-4xl py-12 lg:py-11">
-          <i class="fa-solid fa-marker"></i> Experience 
+          <i class="fa-solid fa-marker"></i> Experience
         </h1>
         <!-- Small Device -->
         <div class="motion-path-demo">
           <svg class="h-screen w-screen md:hidden lg:hidden">
             <!-- Exp 1 -->
-            <path class="path1" fill="none" stroke-width="1" d="M60 50, Q170 20, 300 50"/>
-            <image class="el1" x="-20" y="-30"
-            href="assets/images/astronaut-standing.png"
-            width="60"
-            height="60"
+            <path
+              class="path1"
+              fill="none"
+              stroke-width="1"
+              d="M60 50, Q170 20, 300 50"
             />
-  
-            <text x="120" y="100" fill="white" font-size="25">Capgemini</text>
-            <text x="80" y="130" fill="rgb(29, 204, 175)" font-size="18">Senior DevOps Engineer</text>
-            <text x="130" y="160" fill="white" font-size="18">2024 - Present</text>
-  
-            <!-- Exp 2 -->
-            <path  class="path2" fill="none" stroke-width="1" d="M320 250, Q170 230, 80 250"/>
-            <image class="el2" x="-20" y="-20"
-            href="assets/images/astronaut-sitting.png"
-            width="60"
-            height="60"
+            <image
+              class="el1"
+              x="-20"
+              y="-30"
+              href="assets/images/astronaut-standing.png"
+              width="60"
+              height="60"
             />
-            <text x="60" y="310" fill="white" font-size="25">Tata Consultancy Svc.</text>
-            <text x="110" y="350" fill="rgb(29, 204, 175)" font-size="18">Platform Engineer</text>
-            <text x="100" y="380" fill="white" font-size="18">Sept 2022 - Sept 2024</text>
-            <text x="75" y="430" fill="rgb(29, 204, 175)" font-size="18">DevOps Support Engineer</text>
-            <text x="105" y="460" fill="white" font-size="18">July 2019 - Sept 2022</text>
-          </svg>
 
+            <text x="120" y="100" fill="white" font-size="25">Capgemini</text>
+            <text x="80" y="130" fill="rgb(29, 204, 175)" font-size="18">
+              Senior DevOps Engineer
+            </text>
+            <text x="130" y="160" fill="white" font-size="18">
+              2024 - Present
+            </text>
+
+            <!-- Exp 2 -->
+            <path
+              class="path2"
+              fill="none"
+              stroke-width="1"
+              d="M320 250, Q170 230, 80 250"
+            />
+            <image
+              class="el2"
+              x="-20"
+              y="-20"
+              href="assets/images/astronaut-sitting.png"
+              width="60"
+              height="60"
+            />
+            <text x="60" y="310" fill="white" font-size="25">
+              Tata Consultancy Svc.
+            </text>
+            <text x="110" y="350" fill="rgb(29, 204, 175)" font-size="18">
+              Platform Engineer
+            </text>
+            <text x="100" y="380" fill="white" font-size="18">
+              Sept 2022 - Sept 2024
+            </text>
+            <text x="75" y="430" fill="rgb(29, 204, 175)" font-size="18">
+              DevOps Support Engineer
+            </text>
+            <text x="105" y="460" fill="white" font-size="18">
+              July 2019 - Sept 2022
+            </text>
+          </svg>
 
           <svg class="h-screen w-screen hidden md:block">
             <!-- Exp 1 -->
-             
-            <path class="path1-lg" fill="none" stroke-width="1" d="M300 100, Q750 10, 1250 100"/>
-            <image class="el1-lg" x="-20" y="-30"
-            href="assets/images/astronaut-standing.png"
-            width="120"
-            height="120"
+
+            <path
+              class="path1-lg"
+              fill="none"
+              stroke-width="1"
+              d="M300 100, Q750 10, 1250 100"
             />
-  
+            <image
+              class="el1-lg"
+              x="-20"
+              y="-30"
+              href="assets/images/astronaut-standing.png"
+              width="120"
+              height="120"
+            />
+
             <text x="45vw" y="100" fill="white" font-size="30">Capgemini</text>
-            <text x="41vw" y="150" fill="rgb(29, 204, 175)" font-size="25">Senior DevOps Engineer</text>
-            <text x="45vw" y="190" fill="white" font-size="25">2024 - Present</text>
-  
+            <text x="41vw" y="150" fill="rgb(29, 204, 175)" font-size="25">
+              Senior DevOps Engineer
+            </text>
+            <text x="45vw" y="190" fill="white" font-size="25">
+              2024 - Present
+            </text>
+
             <!-- Exp 2 -->
-            <path  class="path2-lg" fill="none" stroke-width="1" d="M1250 330, Q750 230, 300 330"/>
-            <image class="el2-lg" x="-20" y="-20"
-            href="assets/images/astronaut-sitting.png"
-            width="120"
-            height="120"
+            <path
+              class="path2-lg"
+              fill="none"
+              stroke-width="1"
+              d="M1250 330, Q750 230, 300 330"
             />
-            <text x="41vw" y="330" fill="white" font-size="30">Tata Consultancy Svc.</text>
-            <text x="44vw" y="380" fill="rgb(29, 204, 175)" font-size="25">Platform Engineer</text>
-            <text x="43vw" y="410" fill="white" font-size="25">Sept 2022 - Sept 2024</text>
-            <text x="41vw" y="460" fill="rgb(29, 204, 175)" font-size="25">DevOps Support Engineer</text>
-            <text x="43vw" y="490" fill="white" font-size="25">July 2019 - Sept 2022</text>
+            <image
+              class="el2-lg"
+              x="-20"
+              y="-20"
+              href="assets/images/astronaut-sitting.png"
+              width="120"
+              height="120"
+            />
+            <text x="41vw" y="330" fill="white" font-size="30">
+              Tata Consultancy Svc.
+            </text>
+            <text x="44vw" y="380" fill="rgb(29, 204, 175)" font-size="25">
+              Platform Engineer
+            </text>
+            <text x="43vw" y="410" fill="white" font-size="25">
+              Sept 2022 - Sept 2024
+            </text>
+            <text x="41vw" y="460" fill="rgb(29, 204, 175)" font-size="25">
+              DevOps Support Engineer
+            </text>
+            <text x="43vw" y="490" fill="white" font-size="25">
+              July 2019 - Sept 2022
+            </text>
           </svg>
-          
-          
         </div>
-        
+
         <!-- Large Devices -->
-        <div class="motion-path-demo">
-         
-        </div>
-  
+        <div class="motion-path-demo"></div>
       </div>
       <!-- End of Experience Section -->
 
-       <!-- Start of Contact Section -->
-      <div id="contact-section" class="section flex flex-col items-center h-screen overflow-hidden">
-
-        <div class="contact-form">
-          <h1
-          class="text-zinc-50 text-4xl pt-14 pb-14 lg:py-5 md:text-5xl md:mb-6"
-        >
+      <!-- Start of Contact Section -->
+      <div
+        id="contact-section"
+        class="section relative flex flex-col items-center h-screen overflow-hidden"
+      >
+        <h1 class="text-zinc-50 text-4xl py-12 lg:py-11">
           <i class="fa-solid fa-marker"></i> Contact
         </h1>
+
+        <img
+          id="ufo"
+          src="assets/images/space_ship.png"
+          class="h-32 w-32 absolute top-20"
+        />
+
+        <div class="contact-form relative">
+          <form>
+            <label class="block text-white mb-2" for="name">Name : </label>
+            <input
+              class="w-full rounded mb-4 p-1 px-3 focus:outline-none focus:ring focus:border-blue-500"
+              type="text"
+              name="name"
+              id="name"
+              spellcheck="false"
+              required
+            />
+            <label class="block text-white mb-2" for="email">Email : </label>
+            <input
+              class="w-full rounded mb-4 p-1 px-3 focus:outline-none focus:ring focus:border-blue-500"
+              type="text"
+              name="email"
+              id="email"
+              spellcheck="false"
+              required
+            />
+            <label class="block text-white mb-2" for="msg">Message : </label>
+            <textarea
+              class="w-full rounded mb-4 p-1 px-3 focus:outline-none focus:ring focus:border-blue-500"
+              type="textarea"
+              name="msg"
+              id="msg"
+              rows="5"
+              cols="25"
+              resize="none"
+              spellcheck="false"
+              required
+            ></textarea>
+            <button
+              id="form-submit-btn"
+              type="submit"
+              class="block mx-auto border py-1 px-4 text-white hover:bg-cyan-500 hover:border"
+            >
+              Send
+            </button>
+          </form>
+          <svg
+            id="envelop"
+            class="absolute h-20 w-20 top-[40%] left-[43%]"
+            viewbox="0 0 80 80"
+            stroke="white"
+          >
+            <defs>
+              <pattern
+                id="image"
+                x="0"
+                y="0"
+                height="100%"
+                width="100%"
+                viewbox="50 50 160 160"
+              >
+                <image
+                  x="0"
+                  y="0"
+                  xlink:href="https://rukminim2.flixcart.com/image/850/1000/xif0q/poster/6/j/i/medium-butcutnw17023-astronaut-space-psychedelic-animated-hd-original-imaghdecbzcg6zxs.jpeg?q=90&crop=false"
+                ></image>
+              </pattern>
+            </defs>
+            <rect
+              x="0"
+              y="30"
+              rx="5"
+              ry="5"
+              height="50"
+              width="80"
+              fill="url(#image)"
+            ></rect>
+            <polygon
+              id="pocket"
+              points="0 30  80 30  40 0"
+              fill="url(#image)"
+            />
+          </svg>
         </div>
       </div>
       <!-- End of Contact Section -->
     </div>
-    
-       <script src="src/js/script.js"></script>
+
+    <script src="src/js/script.js"></script>
 
     <!-- Swiper JS script -->
     <script src="src/js/swiper.js"></script>

@@ -177,3 +177,19 @@ h1 {
         font-size: 20px;
   }
 }
+
+.contact-form{
+
+    /* border: 2px solid blue; */
+    width: 500px;
+    max-width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.contact-form svg{
+    display: none;
+}
+
+textarea {
+    resize: none; /* Disables resizability */
+}
