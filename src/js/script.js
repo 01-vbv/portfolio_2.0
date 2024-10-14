@@ -322,6 +322,7 @@ const astronaut_1 = anime({
   easing: "linear",
   duration: 2000,
   autoplay: false,
+  delay: 800,
 });
 
 let path2 = anime.path(".motion-path-demo .path2");
@@ -334,6 +335,34 @@ const astronaut_2 = anime({
   easing: "linear",
   duration: 2000,
   autoplay: false,
+  delay: 800,
+});
+
+// Larger Screen
+let path1_lg = anime.path(".motion-path-demo .path1-lg");
+
+const astronaut_1_lg = anime({
+  targets: ".el1-lg",
+  translateX: path1_lg("x"),
+  translateY: path1_lg("y"),
+  rotate: path1_lg("angle"),
+  easing: "linear",
+  duration: 2000,
+  autoplay: false,
+  delay: 800,
+});
+
+let path2_lg = anime.path(".motion-path-demo .path2-lg");
+
+const astronaut_2_lg = anime({
+  targets: ".el2-lg",
+  translateX: path2_lg("x"),
+  translateY: path2_lg("y"),
+  rotate: path2_lg("angle"),
+  easing: "linear",
+  duration: 2000,
+  autoplay: false,
+  delay: 800,
 });
 
 // ##############################################   EVENTS  ##########################################
@@ -361,6 +390,8 @@ window.onscroll = function (e) {
     if (animateOnce.astronaut) {
       astronaut_1.play();
       astronaut_2.play();
+      astronaut_1_lg.play();
+      astronaut_2_lg.play();
       animateOnce.astronaut = !animateOnce.astronaut;
     }
   } else if (section_div[5].getBoundingClientRect().top >= -10) {

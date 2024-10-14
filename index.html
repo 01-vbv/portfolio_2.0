@@ -42,7 +42,6 @@
         <a href="#skill-section"><li>Skills</li></a>
         <a href="#project-section"><li>Project</li></a>
         <a href="#exp-section"><li>Experience</li></a>
-        <a href="#portfolio"><li>Portfolio</li></a>
         <a href="#contact-section"><li>Contact</li></a>
       </ul>
     </nav>
@@ -446,8 +445,9 @@
         <h1 class="text-zinc-50 text-4xl py-12 lg:py-11">
           <i class="fa-solid fa-marker"></i> Experience 
         </h1>
+        <!-- Small Device -->
         <div class="motion-path-demo">
-          <svg class="h-screen w-screen">
+          <svg class="h-screen w-screen md:hidden lg:hidden">
             <!-- Exp 1 -->
             <path class="path1" fill="none" stroke-width="1" d="M60 50, Q170 20, 300 50"/>
             <image class="el1" x="-20" y="-30"
@@ -473,13 +473,59 @@
             <text x="75" y="430" fill="rgb(29, 204, 175)" font-size="18">DevOps Support Engineer</text>
             <text x="105" y="460" fill="white" font-size="18">July 2019 - Sept 2022</text>
           </svg>
+
+
+          <svg class="h-screen w-screen hidden md:block">
+            <!-- Exp 1 -->
+             
+            <path class="path1-lg" fill="none" stroke-width="1" d="M300 100, Q750 10, 1250 100"/>
+            <image class="el1-lg" x="-20" y="-30"
+            href="assets/images/astronaut-standing.png"
+            width="120"
+            height="120"
+            />
+  
+            <text x="45vw" y="100" fill="white" font-size="30">Capgemini</text>
+            <text x="41vw" y="150" fill="rgb(29, 204, 175)" font-size="25">Senior DevOps Engineer</text>
+            <text x="45vw" y="190" fill="white" font-size="25">2024 - Present</text>
+  
+            <!-- Exp 2 -->
+            <path  class="path2-lg" fill="none" stroke-width="1" d="M1250 330, Q750 230, 300 330"/>
+            <image class="el2-lg" x="-20" y="-20"
+            href="assets/images/astronaut-sitting.png"
+            width="120"
+            height="120"
+            />
+            <text x="41vw" y="330" fill="white" font-size="30">Tata Consultancy Svc.</text>
+            <text x="44vw" y="380" fill="rgb(29, 204, 175)" font-size="25">Platform Engineer</text>
+            <text x="43vw" y="410" fill="white" font-size="25">Sept 2022 - Sept 2024</text>
+            <text x="41vw" y="460" fill="rgb(29, 204, 175)" font-size="25">DevOps Support Engineer</text>
+            <text x="43vw" y="490" fill="white" font-size="25">July 2019 - Sept 2022</text>
+          </svg>
+          
           
         </div>
+        
+        <!-- Large Devices -->
+        <div class="motion-path-demo">
+         
+        </div>
+  
       </div>
       <!-- End of Experience Section -->
-       
-      <div id="portfolio" class="section flex flex-col items-center h-screen overflow-hidden"></div>
-      <div id="contact-section" class="section flex flex-col items-center h-screen overflow-hidden"></div>
+
+       <!-- Start of Contact Section -->
+      <div id="contact-section" class="section flex flex-col items-center h-screen overflow-hidden">
+
+        <div class="contact-form">
+          <h1
+          class="text-zinc-50 text-4xl pt-14 pb-14 lg:py-5 md:text-5xl md:mb-6"
+        >
+          <i class="fa-solid fa-marker"></i> Contact
+        </h1>
+        </div>
+      </div>
+      <!-- End of Contact Section -->
     </div>
     
        <script src="src/js/script.js"></script>
