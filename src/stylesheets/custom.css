@@ -186,10 +186,15 @@ h1 {
     padding: 10px;
 }
 
-.contact-form svg{
-    display: none;
-}
-
 textarea {
     resize: none; /* Disables resizability */
+}
+
+.contact-form-error {
+    color: white;
+    text-align: center;
+    background-color: rgba(255, 35, 35, 0.607);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 3px;
 }

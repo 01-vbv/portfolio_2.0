@@ -581,20 +581,80 @@
       <!-- Start of Contact Section -->
       <div
         id="contact-section"
-        class="section relative flex flex-col items-center h-screen overflow-hidden"
+        class="section relative flex flex-col items-center h-screen"
       >
-        <h1 class="text-zinc-50 text-4xl py-12 lg:py-11">
+        <h1 class="text-zinc-50 text-4xl pt-12 lg:pt-11">
           <i class="fa-solid fa-marker"></i> Contact
         </h1>
+
+        <div class="connect_to_mailserver text-white inline-block mt-6">
+          <div class="satellite-container relative">
+            <img
+              src="assets/images/satellite.png"
+              class="h-20 w-40 block mx-auto relative"
+            />
+            <svg
+              id="satellite"
+              class="h-10 w-10 absolute -top-4 left-[40%]"
+              stroke="white"
+              stroke-width="2"
+              viewBox="0 0 40 40"
+              preserveAspectRatio="none"
+            >
+              <path class="signal" d="M 0 10 Q 20 -5 40 10" fill="none"></path>
+              <path class="signal" d="M 10 20 Q 20 10 30 20" fill="none"></path>
+              <path class="signal" d="M 15 30 Q 20 25 25 30" fill="none"></path>
+              <circle class="signal" cx="20" cy="35" r="0.5"></circle>
+            </svg>
+          </div>
+          <p class="my-2">Establishing Connection</p>
+        </div>
 
         <img
           id="ufo"
           src="assets/images/space_ship.png"
-          class="h-32 w-32 absolute top-20"
+          class="h-20 w-20 absolute top-60"
         />
-
-        <div class="contact-form relative">
-          <form>
+        <svg
+          id="envelop"
+          class="absolute h-10 w-10 top-[50%]"
+          viewbox="0 0 80 80"
+          stroke="white"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <pattern
+              id="env-image"
+              x="0"
+              y="0"
+              height="100%"
+              width="100%"
+              viewbox="50 50 160 160"
+            >
+              <image
+                x="0"
+                y="0"
+                xlink:href="https://rukminim2.flixcart.com/image/850/1000/xif0q/poster/6/j/i/medium-butcutnw17023-astronaut-space-psychedelic-animated-hd-original-imaghdecbzcg6zxs.jpeg?q=90&crop=false"
+              ></image>
+            </pattern>
+          </defs>
+          <rect
+            x="0"
+            y="30"
+            height="50"
+            width="80"
+            fill="url(#env-image)"
+          ></rect>
+          <polygon
+            id="pocket"
+            points="0 30  80 30  40 0"
+            rx="5"
+            ry="5"
+            fill="url(#env-image)"
+          />
+        </svg>
+        <div class="contact-form">
+          <form id="contactForm" novalidate>
             <label class="block text-white mb-2" for="name">Name : </label>
             <input
               class="w-full rounded mb-4 p-1 px-3 focus:outline-none focus:ring focus:border-blue-500"
@@ -619,7 +679,7 @@
               type="textarea"
               name="msg"
               id="msg"
-              rows="5"
+              rows="4"
               cols="25"
               resize="none"
               spellcheck="false"
@@ -633,43 +693,6 @@
               Send
             </button>
           </form>
-          <svg
-            id="envelop"
-            class="absolute h-20 w-20 top-[40%] left-[43%]"
-            viewbox="0 0 80 80"
-            stroke="white"
-          >
-            <defs>
-              <pattern
-                id="image"
-                x="0"
-                y="0"
-                height="100%"
-                width="100%"
-                viewbox="50 50 160 160"
-              >
-                <image
-                  x="0"
-                  y="0"
-                  xlink:href="https://rukminim2.flixcart.com/image/850/1000/xif0q/poster/6/j/i/medium-butcutnw17023-astronaut-space-psychedelic-animated-hd-original-imaghdecbzcg6zxs.jpeg?q=90&crop=false"
-                ></image>
-              </pattern>
-            </defs>
-            <rect
-              x="0"
-              y="30"
-              rx="5"
-              ry="5"
-              height="50"
-              width="80"
-              fill="url(#image)"
-            ></rect>
-            <polygon
-              id="pocket"
-              points="0 30  80 30  40 0"
-              fill="url(#image)"
-            />
-          </svg>
         </div>
       </div>
       <!-- End of Contact Section -->

@@ -4,7 +4,7 @@ const hamburger_list_items = document.querySelectorAll("#hamburger-list a li");
 const section_div = document.querySelectorAll(".section");
 const info_icon = document.querySelectorAll(".info");
 const close_modal_icon = document.querySelectorAll(".close-modal");
-const form_submit_btn = document.getElementById("form-submit-btn");
+const contact_form = document.getElementById("contactForm");
 
 let flag = true;
 let animateOnce = {
@@ -39,6 +39,67 @@ close_modal_icon.forEach((ele, index) => {
     modal.classList.add("hide-modal");
   });
 });
+
+contact_form.addEventListener("submit", async (e) => {
+  const error_div_exist = document.querySelector(".contact-form-error");
+  if (error_div_exist) {
+    error_div_exist.remove();
+  }
+  let formData = new FormData(contact_form);
+  e.preventDefault();
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const message = formData.get("msg");
+
+  connection_Animation.forEach((anim) => anim.play());
+
+  document.getElementById("form-submit-btn").disabled = true;
+  const res = await sendMail(name, email, message);
+  document.getElementById("form-submit-btn").disabled = false;
+  connection_Animation.forEach((anim) => {
+    anim.restart();
+    anim.pause();
+  });
+  const body = await res.json();
+
+  if (res.ok && res.status === 200) {
+    sendAnimation.play(body);
+  } else {
+    errorContainer(body.message);
+  }
+  contact_form.reset(body);
+});
+
+async function sendMail(name, email, message) {
+  try {
+    const res = await fetch(
+      "https://email-handler-mfa8.onrender.com:3000/mail",
+      {
+        method: "POST",
+        body: JSON.stringify({ name, email, message }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return res;
+  } catch (err) {
+    errorContainer("Spaceship under maintainance, please try again later");
+    console.log("Error: ", err);
+  }
+}
+
+// Error container
+function errorContainer(errorMsg) {
+  const error_div_exist = document.querySelector(".contact-form-error");
+  if (error_div_exist) {
+    error_div_exist.remove();
+  }
+  const error_div = document.createElement("div");
+  error_div.classList.add("contact-form-error");
+  error_div.textContent = errorMsg;
+  contact_form.insertAdjacentElement("beforebegin", error_div);
+}
 
 // ##############################################  ANIMATION #########################################
 
@@ -381,13 +442,14 @@ sendAnimation
     duration: 2000,
   })
   .add({
-    targets: ".contact-form svg",
+    targets: "#envelop",
+    translateY: 30,
     duration: 2000,
     scale: [0, 1],
     easing: "easeInOutQuad",
-    begin: function () {
-      document.querySelector(".contact-form svg").style.display = "block";
-    },
+    // begin: function () {
+    //   document.querySelector(".contact-form svg").style.display = "block";
+    // },
   })
   .add({
     targets: "#pocket",
@@ -397,7 +459,7 @@ sendAnimation
   })
   .add({
     targets: "#ufo",
-    translateX: ["-20vw", 0],
+    translateY: [0, 10],
     scale: [0, 1],
     opacity: [0, 1],
     easing: "easeOutQuad",
@@ -405,7 +467,7 @@ sendAnimation
   })
   .add({
     targets: "#envelop",
-    translateY: -450,
+    translateY: -80,
     scale: [1, 0.5],
     opacity: [1, 0],
     easing: "easeOutQuad",
@@ -413,7 +475,7 @@ sendAnimation
   })
   .add({
     targets: "#ufo",
-    translateX: [0, 80],
+    translateY: [10, 0],
     scale: [1, 0],
     opacity: [1, 0],
     easing: "easeOutQuad",
@@ -424,10 +486,36 @@ sendAnimation
     scale: [0, 1],
     duration: 2000,
   });
-// .add({
-//   targets: '.basic-timeline-demo .el.triangle',
-//   translateX: 250,
-// });
+
+// ##Contact Section
+
+const connection_Animation = [
+  anime({
+    targets: ".signal",
+    opacity: [0, 1],
+    delay: anime.stagger(150, { from: "last" }),
+    loop: true,
+    autoplay: false,
+  }),
+
+  anime({
+    targets: ".connect_to_mailserver p",
+    opacity: [0, 1],
+    loop: true,
+    direction: "alternate",
+    easing: "easeInOutSine",
+    autoplay: false,
+  }),
+
+  anime({
+    targets: ".satellite-container",
+    translateY: [8, -2],
+    loop: true,
+    direction: "alternate",
+    easing: "easeInOutSine",
+    autoplay: false,
+  }),
+];
 
 // ##############################################   EVENTS  ##########################################
 
@@ -489,9 +577,3 @@ window.onscroll = function (e) {
     600
   );
 };
-
-form_submit_btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log(e.target.value);
-  sendAnimation.play();
-});
