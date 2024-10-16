@@ -63,25 +63,22 @@ contact_form.addEventListener("submit", async (e) => {
   const body = await res.json();
 
   if (res.ok && res.status === 200) {
+    contact_form.reset(body);
     sendAnimation.play(body);
   } else {
     errorContainer(body.message);
   }
-  contact_form.reset(body);
 });
 
 async function sendMail(name, email, message) {
   try {
-    const res = await fetch(
-      "https://email-handler-mfa8.onrender.com:3000/mail",
-      {
-        method: "POST",
-        body: JSON.stringify({ name, email, message }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch("https://email-handler-mfa8.onrender.com/mail", {
+      method: "POST",
+      body: JSON.stringify({ name, email, message }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     return res;
   } catch (err) {
     errorContainer("Spaceship under maintainance, please try again later");
